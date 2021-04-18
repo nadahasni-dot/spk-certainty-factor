@@ -50,11 +50,15 @@ class Diagnosa extends CI_Controller
         $this->form_validation->set_rules('kondisi[]', 'Kondisi', 'required');
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('template/panel/header_view', $data);
-            $this->load->view('template/panel/sidebar_diagnosa_view');
-            $this->load->view('diagnosa/diagnosa_test_view');
-            $this->load->view('template/panel/control_view');
-            $this->load->view('template/panel/footer_view');
+            // $this->load->view('template/panel/header_view', $data);
+            // $this->load->view('template/panel/sidebar_diagnosa_view');
+            // $this->load->view('diagnosa/diagnosa_test_view');
+            // $this->load->view('template/panel/control_view');
+            // $this->load->view('template/panel/footer_view');
+
+            $this->load->view('template/landing/landing_header_view', $data);
+            $this->load->view('landing/diagnosa_view');
+            $this->load->view('template/landing/landing_footer_view');
         } else {
             // * perhitungan CF START
             // * inisiasi variabel yang akan diinput ke db
@@ -125,7 +129,7 @@ class Diagnosa extends CI_Controller
 
             // * mengurutkan dari nilai tertinggi ke rendah
             arsort($list_penyakit);
-    
+
             // * perhitungan CF END
 
             // ? tampilkan hasil perhitungan
@@ -135,11 +139,15 @@ class Diagnosa extends CI_Controller
             $data['hasil_penyakit'] = $this->Penyakit_model->getHasilPenyakit($list_penyakit);
             $data['hasil_gejala'] = $this->Gejala_model->getHasilGejala($list_gejala);
 
-            $this->load->view('template/panel/header_view', $data);
-            $this->load->view('template/panel/sidebar_diagnosa_view');
-            $this->load->view('diagnosa/hasil_diagnosa_view');
-            $this->load->view('template/panel/control_view');
-            $this->load->view('template/panel/footer_view');
+            // $this->load->view('template/panel/header_view', $data);
+            // $this->load->view('template/panel/sidebar_diagnosa_view');
+            // $this->load->view('diagnosa/hasil_diagnosa_view');
+            // $this->load->view('template/panel/control_view');
+            // $this->load->view('template/panel/footer_view');
+
+            $this->load->view('template/landing/landing_header_view', $data);
+            $this->load->view('landing/diagnosa_hasil_view');
+            $this->load->view('template/landing/landing_footer_view');
         }
     }
     // * halaman diagnosa ===================================================================================
