@@ -52,11 +52,6 @@
                                 <h5><i class="icon fas fa-info"></i> Perhatian!</h5>
                                 Silahkan memilih gejala sesuai dengan kondisi anda, anda dapat memilih kepastian kondisi dari pasti tidak sampai pasti ya, jika sudah tekan tombol proses (diagnosa) di bawah untuk melihat hasil.
                             </div>
-
-                            <p>
-                                Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
-                            </p>
-
                         </div>
 
                         <!-- <div class="entry-footer clearfix">
