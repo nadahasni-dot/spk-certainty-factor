@@ -91,9 +91,9 @@
                                         <p>
                                             Tingkat akurasi hingga <cite title="Source Title"><?= number_format($penyakit['nilai_perhitungan'] * 100, 2) . '% (' . number_format($penyakit['nilai_perhitungan'], 4) . ')'; ?></cite>
                                         </p>
-                                        <h4>Deskripsi Penyakit</h4>
+                                        <h4>Deskripsi Singkat Penyakit</h4>
                                         <p><?= $penyakit['deskripsi_penyakit']; ?></p>
-                                        <h4>Saran Penyakit</h4>
+                                        <h4>Saran Singkat Penyakit</h4>
                                         <p><?= $penyakit['saran_penyakit']; ?></p>
 
 
@@ -122,7 +122,17 @@
                                     endforeach;
                                 }
                                 ?>
-                            </ul>
+                            </ul>                            
+
+                            <?php if ($penyakit['penyakit_artikel'] != null) : ?>
+                            <h4>Tentang Penyakit</h4>
+                            <p><?= $penyakit['penyakit_artikel']; ?></p>
+                            <?php endif; ?>
+
+                            <?php if ($penyakit['penyakit_saran_artikel'] != null) : ?>
+                            <h4>Saran Untuk Anda</h4>
+                            <p><?= $penyakit['penyakit_saran_artikel']; ?></p>
+                            <?php endif; ?>
 
                             <a href="<?= base_url('diagnosa/diagnosa'); ?>" class="btn btn-success mt-4">Lakukan Diagnosa Lagi</a>
                         </div>

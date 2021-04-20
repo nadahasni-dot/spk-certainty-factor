@@ -16,6 +16,7 @@ class Pakar extends CI_Controller
         $this->load->model('Kondisi_model');
         $this->load->model('Pengetahuan_model');
         $this->load->model('Penyakit_model');
+        $this->load->model('Hasil_model');
     }
 
     // * halaman beranda
@@ -370,6 +371,24 @@ class Pakar extends CI_Controller
         }
     }
     // * halaman pengetahuan ===================================================================================
+
+    // * halaman hasil diagnosa
+    public function hasildiagnosa()
+    {
+        $data['title'] = "Hasil Diagnosa";
+        $data['menu'] = "hasildiagnosa";
+        $data['sub_menu'] = null;
+        $data['sub_menu_action'] = null;
+        // user data        
+        $data['user'] = $this->User_model->getUser('id_user', $this->session->userdata('id_user'));
+        $data['hasil'] = $this->Hasil_model->getHasil('all');
+
+        $this->load->view('template/panel/header_view', $data);
+        $this->load->view('template/panel/sidebar_pakar_view');
+        $this->load->view('pakar/hasil_diagnosa_pakar_view');
+        $this->load->view('template/panel/control_view');
+        $this->load->view('template/panel/footer_view');
+    }
 
     // * halaman kondisi ===================================================================================
     public function kondisi()

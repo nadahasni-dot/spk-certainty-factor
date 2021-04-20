@@ -17,6 +17,7 @@ class Hasil_model extends CI_Model
         }
 
         if ($tipe == 'all') {
+            $this->db->join('tb_penyakit', 'tb_penyakit.id_penyakit = tb_hasil.id_penyakit');
             return $this->db->get('tb_hasil')->result_array();
         }
 

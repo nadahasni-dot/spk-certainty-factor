@@ -78,6 +78,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="<?= base_url('admin/hasildiagnosa'); ?>" class="nav-link <?= $menu == 'hasildiagnosa' ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-heart"></i>
+              <p>
+                Hasil Diagnosa
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="<?= base_url('admin/password'); ?>" class="nav-link <?= $menu == 'password' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-key"></i>
               <p>

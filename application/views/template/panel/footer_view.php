@@ -70,6 +70,9 @@
   <?php if ($menu == 'diagnosa') : ?>
     <script src="<?= base_url('assets/scripts/diagnosa.js') ?>"></script>
   <?php endif; ?>
+  <?php if ($menu == 'hasildiagnosa') : ?>
+    <script src="<?= base_url('assets/scripts/hasil.diagnosa.js') ?>"></script>
+  <?php endif; ?>
   </body>
 
   </html>
