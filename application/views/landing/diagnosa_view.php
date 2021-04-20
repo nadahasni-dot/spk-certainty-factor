@@ -9,8 +9,8 @@
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li><a href="<?= base_url(); ?>">Home</a></li>
-                <li><a href="<?= base_url(); ?>#about">About</a></li>
-                <li><a href="<?= base_url(); ?>#services">Services</a></li>
+                <li><a href="<?= base_url(); ?>#about">Tentang</a></li>
+                <li><a href="<?= base_url(); ?>#services">Layanan</a></li>
                 <li class="active"><a href="<?= base_url('diagnosa/diagnosa'); ?>">Diagnosa</a></li>
                 <li><a href="<?= base_url('login'); ?>">Login</a></li>
             </ul>

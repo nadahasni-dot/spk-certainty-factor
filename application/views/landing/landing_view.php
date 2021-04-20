@@ -9,8 +9,8 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="<?= base_url(); ?>">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#services">Layanan</a></li>
                     <li><a href="<?= base_url('diagnosa/diagnosa'); ?>">Diagnosa</a></li>
                     <li><a href="<?= base_url('login'); ?>">Login</a></li>
                 </ul>
@@ -22,10 +22,10 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container">
-            <h3>Welcome to <strong>Sistem Pakar</strong></h3>
-            <h1>Smart Detection</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <h3>Selamat datang di <strong>Sistem Pakar</strong></h3>
+            <h1>DETEKSI PINTAR</h1>
+            <h2>Sistem ini dilengkapi pengetahuan dari pakar terpercaya untuk menidentifikasi penyakit tertentu</h2>
+            <a href="#about" class="btn-get-started scrollto">Lebih Lanjut</a>
         </div>
     </section><!-- End Hero -->
 
@@ -36,30 +36,25 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>About</h2>
-                    <h3>Learn More <span>About Us</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                    <h2>Tentang</h2>
+                    <h3>Pelajari Lebih Tentang <span>Sistem Ini</span></h3>
+                    <p>Sistem pakar adalah sistem informasi yang mengandung pengetahuan dari satu atau lebih pakar manusia mengenai suatu bidang spesifik.</p>
                 </div>
 
                 <div class="row content">
                     <div class="col-lg-6">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
+                            Sistem pakar ini dilengkapi data pengetahuan dari pakar terpercaya untuk mendeteksi beberapa penyakit.
                         </p>
                         <ul>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                            <li><i class="ri-check-double-line"></i> Penyakit Kolesterol</li>
+                            <li><i class="ri-check-double-line"></i> Penyakit Asam Urat</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
+                            Pakar yang menjadi sumber pengetahuan telah berpengalaman dalam bidang penyakit dalam. Dan telah melakukan praktik resmi di POLIKLINIK Politeknik Negeri Jember selama lebih dari 5 tahun.
                         </p>
-                        <a href="#" class="btn-learn-more">Learn More</a>
                     </div>
                 </div>
 
@@ -71,41 +66,41 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Services</h2>
-                    <h3>We do offer awesome <span>Services</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                    <h2>Layanan</h2>
+                    <h3>Sistem ini memiliki beberapa <span>Layanan</span></h3>
+                    <p>Layanan dibuat untuk admin, seorang pakar, ataupun pengunjung yang ingin melakukan diagnosa.</p>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                            <div class="icon"><i class="bx bx-search"></i></div>
+                            <h4 class="title"><a href="">Diagnosa Otomatis</a></h4>
+                            <p class="description">Pengguna hanya perlu melakukan input data diri dan mengisi kuisioner. Hasil akan muncul secara otomatis.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            <div class="icon"><i class="bx bx-brain"></i></div>
+                            <h4 class="title"><a href="">Smart Detection</a></h4>
+                            <p class="description">Deteksi penyakit dilakukan dengan menggunakan metode Certainty Factor menghasilkan diagnosa yang akurat.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            <h4 class="title"><a href="">Dashboard Panel</a></h4>
+                            <p class="description">Disediakan dashboard panel bagi admin dan pakar untuk melakukan pengelolaan data.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            <h4 class="title"><a href="">Mudah Diakses</a></h4>
+                            <p class="description">Kemudahan akses, dan penggunaan. Dapat diakses melalui internet kapan saja dimana saja.</p>
                         </div>
                     </div>
 
@@ -114,218 +109,18 @@
             </div>
         </section><!-- End Services Section -->
 
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-6 col-6">
-                        <div class="icon-box">
-                            <i class="ri-store-line" style="color: #ffbb2c;"></i>
-                            <h3><a href="">Lorem Ipsum</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <div class="icon-box">
-                            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                            <h3><a href="">Dolor Sitema</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-                            <h3><a href="">Sed perspiciatis</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
-                        <div class="icon-box">
-                            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-                            <h3><a href="">Magni Dolores</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-database-2-line" style="color: #47aeff;"></i>
-                            <h3><a href="">Nemo Enim</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-                            <h3><a href="">Eiusmod Tempor</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-                            <h3><a href="">Midela Teren</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-                            <h3><a href="">Pira Neve</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-anchor-line" style="color: #b2904f;"></i>
-                            <h3><a href="">Dirada Pack</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-disc-line" style="color: #b20969;"></i>
-                            <h3><a href="">Moton Ideal</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-base-station-line" style="color: #ff5828;"></i>
-                            <h3><a href="">Verdo Park</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-                            <h3><a href="">Flavor Nivelanda</a></h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Features Section -->
-
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta">
             <div class="container">
 
                 <div class="text-center">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <a class="cta-btn" href="#">Call To Action</a>
+                    <h3>Coba Diagnosa Sekarang</h3>
+                    <p>Anda dapat mencoba melakukan diagnosa sekarang juga, secara gratis tanpa dipungut biaya. Dapatkan diagnosa secara akurat seperti halnya diagnosa dari seorang pakar asli.</p>
+                    <a class="cta-btn" href="<?= base_url('diagnosa/diagnosa'); ?>">Diagnosa Sekarang</a>
                 </div>
 
             </div>
         </section><!-- End Cta Section -->
-
-        <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Daftar Penyakit</h2>
-                    <h3>Cek daftar <span>Penyakit</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 1</h4>
-                            <p>App</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 2</h4>
-                            <p>App</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 2</h4>
-                            <p>Card</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 2</h4>
-                            <p>Web</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>App 3</h4>
-                            <p>App</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 1</h4>
-                            <p>Card</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Card 3</h4>
-                            <p>Card</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <img src="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                        <div class="portfolio-info">
-                            <h4>Web 3</h4>
-                            <p>Web</p>
-                            <a href="<?= base_url('assets/landing/') ?>img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Portfolio Section -->
 
         <!-- ======= F.A.Q Section ======= -->
         <section id="faq" class="faq">
@@ -339,55 +134,55 @@
                 <ul class="faq-list">
 
                     <li>
-                        <a data-toggle="collapse" class="" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="icofont-simple-up"></i></a>
+                        <a data-toggle="collapse" class="" href="#faq1">Apa itu sistem pakar? <i class="icofont-simple-up"></i></a>
                         <div id="faq1" class="collapse show" data-parent=".faq-list">
                             <p>
-                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                Sistem pakar adalah suatu program komputer yang mengandung pengetahuan dari satu atau lebih pakar manusia mengenai suatu bidang spesifik. Jenis program ini pertama kali dikembangkan oleh periset kecerdasan buatan pada dasawarsa 1960-an dan 1970-an dan diterapkan secara komersial selama 1980-an.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="icofont-simple-up"></i></a>
+                        <a data-toggle="collapse" href="#faq2" class="collapsed">Apa itu metode certainty factor? <i class="icofont-simple-up"></i></a>
                         <div id="faq2" class="collapse" data-parent=".faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                Certainty Factor atau faktor kepastian diperkenalkan pertama kali pada tahun 1975 oleh shortliffe buchanan. Certainty factor adalah suatu metode untuk membuktikan apakah suatu fakta itu pasti ataukah tidak pasti.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="icofont-simple-up"></i></a>
+                        <a data-toggle="collapse" href="#faq3" class="collapsed">Bagaimana cara melakukan diagnosa? <i class="icofont-simple-up"></i></a>
                         <div id="faq3" class="collapse" data-parent=".faq-list">
                             <p>
-                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                Anda dapat menuju halaman diagnosa di menu bagian atas, lalu mengisi data diri, dan menjawab kuisioner deteksi penyakit secara jujur. Hasil diagnosa akan ditampilkan secara otomatis.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="icofont-simple-up"></i></a>
+                        <a data-toggle="collapse" href="#faq4" class="collapsed">Apakah hasil diagnosa dapat dipertanggung jawabkan? <i class="icofont-simple-up"></i></a>
                         <div id="faq4" class="collapse" data-parent=".faq-list">
                             <p>
-                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                Perhitungan diagnosa dilakukan berdasarkan pengetahuan seorang pakar ahli dalam penyakit dalam, sehingga akurasi diagnosa dapat dipastikan tinggi.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="icofont-simple-up"></i></a>
+                        <a data-toggle="collapse" href="#faq5" class="collapsed">Apakah proses diagnosa dipungut biaya? <i class="icofont-simple-up"></i></a>
                         <div id="faq5" class="collapse" data-parent=".faq-list">
                             <p>
-                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                                Diagnosa tidak dipungut biaya sepeser pun. Layanan ini dibuat secara gratis untuk mempermudah pekerjaan seorang pakar.
                             </p>
                         </div>
                     </li>
 
                     <li>
-                        <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="icofont-simple-up"></i></a>
+                        <a data-toggle="collapse" href="#faq6" class="collapsed">Untuk apa menginput data diri? <i class="icofont-simple-up"></i></a>
                         <div id="faq6" class="collapse" data-parent=".faq-list">
                             <p>
-                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                                Data diri digunakan untuk keperluan statistik, seperti mengetahui persebaran deteksi penyakit pada rentang usia tertentu, jenis kelamin tertentu. Data yang anda input akan terjaga kerahasiaannya, dan keamanannya.
                             </p>
                         </div>
                     </li>
@@ -404,7 +199,7 @@
                 <div class="section-title">
                     <h2>Contact</h2>
                     <h3>Contact <span>Us</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+                    <p>Jika ingin mengetahui lebih banyak tentang sistem ini, anda dapat menghubungi kami melalui form dibawah.</p>
                 </div>
 
                 <div>
@@ -418,19 +213,19 @@
                             <div class="address">
                                 <i class="icofont-google-map"></i>
                                 <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p>Lingkungan Panji, Tegalgede, Kec. Kaliwates, Kabupaten Jember, Jawa Timur 68124</p>
                             </div>
 
                             <div class="email">
                                 <i class="icofont-envelope"></i>
                                 <h4>Email:</h4>
-                                <p>info@example.com</p>
+                                <p>farizazik@gmail.com</p>
                             </div>
 
                             <div class="phone">
                                 <i class="icofont-phone"></i>
                                 <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
+                                <p>+62 815 5302 6285</p>
                             </div>
 
                         </div>
