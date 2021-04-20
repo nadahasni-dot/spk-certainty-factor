@@ -15,26 +15,26 @@ class Diagnosa extends CI_Controller
     }
 
     // * fungsi halaman home
-    public function index()
-    {
-        $data['title'] = "Beranda";
-        $data['menu'] = "beranda";
-        $data['sub_menu'] = null;
-        $data['sub_menu_action'] = null;
-        // user data
-        $data['user'] = null;
+    // public function index()
+    // {
+    //     $data['title'] = "Beranda";
+    //     $data['menu'] = "beranda";
+    //     $data['sub_menu'] = null;
+    //     $data['sub_menu_action'] = null;
+    //     // user data
+    //     $data['user'] = null;
 
-        $data['count_penyakit'] = $this->Penyakit_model->countPenyakit('all');
-        $data['count_gejala'] = $this->Gejala_model->countGejala('all');
-        $data['count_pengetahuan'] = $this->Pengetahuan_model->countPengetahuan('all');
-        $data['count_pakar'] = $this->User_model->countUser('all');
+    //     $data['count_penyakit'] = $this->Penyakit_model->countPenyakit('all');
+    //     $data['count_gejala'] = $this->Gejala_model->countGejala('all');
+    //     $data['count_pengetahuan'] = $this->Pengetahuan_model->countPengetahuan('all');
+    //     $data['count_pakar'] = $this->User_model->countUser('all');
 
-        $this->load->view('template/panel/header_view', $data);
-        $this->load->view('template/panel/sidebar_diagnosa_view');
-        $this->load->view('diagnosa/home_diagnosa_view');
-        $this->load->view('template/panel/control_view');
-        $this->load->view('template/panel/footer_view');
-    }
+    //     $this->load->view('template/panel/header_view', $data);
+    //     $this->load->view('template/panel/sidebar_diagnosa_view');
+    //     $this->load->view('diagnosa/home_diagnosa_view');
+    //     $this->load->view('template/panel/control_view');
+    //     $this->load->view('template/panel/footer_view');
+    // }
 
     // * halaman Diagnosa ===================================================================================
     public function diagnosa()
@@ -66,6 +66,11 @@ class Diagnosa extends CI_Controller
             $list_penyakit = array();
 
             // * ambil pilihan pengguna
+            $nama = $this->input->post('nama');
+            $usia = $this->input->post('usia');
+            $jenis_kelamin = $this->input->post('jenis_kelamin');
+            $alamat = $this->input->post('alamat');
+
             $input_gejala_kondisi = $this->input->post('kondisi');
 
             foreach ($input_gejala_kondisi as $row) {
@@ -138,12 +143,53 @@ class Diagnosa extends CI_Controller
 
             $data['hasil_penyakit'] = $this->Penyakit_model->getHasilPenyakit($list_penyakit);
             $data['hasil_gejala'] = $this->Gejala_model->getHasilGejala($list_gejala);
+            $data['identitas'] = array(
+                'nama' => $nama,
+                'usia' => $usia,
+                'jenis_kelamin' => $jenis_kelamin,
+                'alamat' => $alamat,
+            );
 
             // $this->load->view('template/panel/header_view', $data);
             // $this->load->view('template/panel/sidebar_diagnosa_view');
             // $this->load->view('diagnosa/hasil_diagnosa_view');
             // $this->load->view('template/panel/control_view');
             // $this->load->view('template/panel/footer_view');
+
+            // ? input hasil perhitungan ke db
+            if ($list_penyakit && $list_gejala) {
+                $this->load->model('Hasil_model');
+
+                $id_penyakit = null;
+                $nilai = null;
+                $no = 1;
+
+                foreach ($list_penyakit as $key => $value) {
+                    if ($no == 1) {
+                        $id_penyakit = $key;
+                        $nilai = $value;
+                    }
+
+                    $no++;
+                }
+
+                $hasil = array(
+                    'id_penyakit' => $id_penyakit,
+                    'hasil_penyakit' => json_encode($list_penyakit),
+                    'hasil_gejala' => json_encode($list_gejala),
+                    'hasil_nilai' => $nilai,
+                    'nama' => $nama,
+                    'usia' => $usia,
+                    'jenis_kelamin' => $jenis_kelamin,
+                    'alamat' => $alamat,
+                    'hasil_created' => time()
+                );
+
+                $this->Hasil_model->insertHasil($hasil);
+            } else {
+                echo "tidak ada gejala dipilih, tidak ada penyakit terdeteksi";
+                die;
+            }
 
             $this->load->view('template/landing/landing_header_view', $data);
             $this->load->view('landing/diagnosa_hasil_view');
@@ -152,19 +198,43 @@ class Diagnosa extends CI_Controller
     }
     // * halaman diagnosa ===================================================================================
 
-    // * halaman tentang ===================================================================================
-    public function tentang()
+    // * halaman hasil
+    public function hasil($id_hasil)
     {
-        $data['title'] = "Tentang";
-        $data['menu'] = "tentang";
-        $data['sub_menu'] = null;
-        $data['sub_menu_action'] = null;
+        $this->load->model('Hasil_model');
 
-        $this->load->view('template/panel/header_view', $data);
-        $this->load->view('template/panel/sidebar_diagnosa_view');
-        $this->load->view('admin/tentang_admin_view');
-        $this->load->view('template/panel/control_view');
-        $this->load->view('template/panel/footer_view');
+        $hasil = $this->Hasil_model->getHasil('id_hasil', $id_hasil);
+
+        $list_penyakit = json_decode($hasil['hasil_penyakit']);
+        $list_gejala = json_decode($hasil['hasil_gejala']);
+
+        $data['hasil_penyakit'] = $this->Penyakit_model->getHasilPenyakit($list_penyakit);
+        $data['hasil_gejala'] = $this->Gejala_model->getHasilGejala($list_gejala);
+        $data['identitas'] = array(
+            'nama' => $hasil['nama'],
+            'usia' => $hasil['usia'],
+            'jenis_kelamin' => $hasil['jenis_kelamin'],
+            'alamat' => $hasil['alamat'],
+        );
+
+        $this->load->view('template/landing/landing_header_view', $data);
+        $this->load->view('landing/diagnosa_hasil_view');
+        $this->load->view('template/landing/landing_footer_view');
     }
+
+    // * halaman tentang ===================================================================================
+    // public function tentang()
+    // {
+    //     $data['title'] = "Tentang";
+    //     $data['menu'] = "tentang";
+    //     $data['sub_menu'] = null;
+    //     $data['sub_menu_action'] = null;
+
+    //     $this->load->view('template/panel/header_view', $data);
+    //     $this->load->view('template/panel/sidebar_diagnosa_view');
+    //     $this->load->view('admin/tentang_admin_view');
+    //     $this->load->view('template/panel/control_view');
+    //     $this->load->view('template/panel/footer_view');
+    // }
     // * halaman tentang ===================================================================================
 }

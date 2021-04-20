@@ -8,10 +8,10 @@
 
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                <li class="active"><a href="<?= base_url(); ?>">Home</a></li>
+                <li><a href="<?= base_url(); ?>">Home</a></li>
                 <li><a href="<?= base_url(); ?>#about">About</a></li>
                 <li><a href="<?= base_url(); ?>#services">Services</a></li>
-                <li><a href="<?= base_url('diagnosa/diagnosa'); ?>">Diagnosa</a></li>
+                <li class="active"><a href="<?= base_url('diagnosa/diagnosa'); ?>">Diagnosa</a></li>
                 <li><a href="<?= base_url('login'); ?>">Login</a></li>
             </ul>
         </nav><!-- .nav-menu -->
@@ -48,6 +48,13 @@
                         </h2>
 
                         <div class="entry-content">
+                            <ul>
+                                <li><span class="font-weight-bold">Nama :</span> <?= $identitas['nama'] ?></li>
+                                <li><span class="font-weight-bold">Usia :</span> <?= $identitas['usia'] ?></li>
+                                <li><span class="font-weight-bold">Jenis Kelamin :</span> <?= $identitas['jenis_kelamin'] ?></li>
+                                <li><span class="font-weight-bold">Alamat :</span> <?= $identitas['alamat'] ?></li>
+                            </ul>
+
                             <div class="col-12 table-responsive p-0">
                                 <table class="table table-striped table-hover">
                                     <thead>
@@ -116,6 +123,8 @@
                                 }
                                 ?>
                             </ul>
+
+                            <a href="<?= base_url('diagnosa/diagnosa'); ?>" class="btn btn-success mt-4">Lakukan Diagnosa Lagi</a>
                         </div>
 
                     </article><!-- End blog entry -->
