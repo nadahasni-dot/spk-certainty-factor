@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Mar 2021 pada 06.41
+-- Waktu pembuatan: 20 Apr 2021 pada 08.58
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.14
 
@@ -87,8 +87,25 @@ CREATE TABLE `tb_hasil` (
   `id_penyakit` int(11) NOT NULL,
   `hasil_penyakit` text NOT NULL,
   `hasil_gejala` text NOT NULL,
-  `hasil_nilai` double NOT NULL
+  `hasil_nilai` double NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `usia` int(11) NOT NULL,
+  `jenis_kelamin` varchar(255) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `hasil_created` int(11) NOT NULL,
+  `hasil_updated` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_hasil`
+--
+
+INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `hasil_penyakit`, `hasil_gejala`, `hasil_nilai`, `nama`, `usia`, `jenis_kelamin`, `alamat`, `hasil_created`, `hasil_updated`) VALUES
+(4, 5, '{\"5\":\"0.9826\",\"4\":\"0.8638\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"1\",\"13\":\"2\",\"12\":\"1\",\"11\":\"6\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 0.9826, 'Fariz Gustav', 21, 'laki-laki', 'Jl Gebang', 1618893660, NULL),
+(5, 5, '{\"5\":\"0.8091\",\"4\":\"0.5509\"}', '{\"16\":\"2\",\"15\":\"5\",\"13\":\"4\",\"10\":\"2\",\"9\":\"3\",\"8\":\"5\"}', 0.8091, 'Mawar', 50, 'perempuan', 'Jl Mastrip 10', 1618893788, NULL),
+(12, 5, '{\"5\":\"0.9054\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"4\",\"13\":\"5\",\"12\":\"6\",\"11\":\"8\"}', 0.9054, 'Siti', 44, 'perempuan', 'jl Manggar 55', 1618894415, NULL),
+(13, 4, '{\"4\":\"1.0000\"}', '{\"11\":\"1\",\"10\":\"1\",\"9\":\"1\",\"8\":\"2\"}', 1, 'Kak Ros', 27, 'perempuan', 'Jl Kampung Durian Runtuh', 1618901488, NULL),
+(14, 4, '{\"4\":\"1.0000\"}', '{\"16\":\"5\",\"15\":\"7\",\"14\":\"5\",\"13\":\"4\",\"12\":\"6\",\"11\":\"1\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 1, 'Atuk Dalang', 27, 'laki-laki', 'Jl Kampung Durian Runtuh 22', 1618901624, NULL);
 
 -- --------------------------------------------------------
 
@@ -247,7 +264,7 @@ ALTER TABLE `tb_gejala`
 -- AUTO_INCREMENT untuk tabel `tb_hasil`
 --
 ALTER TABLE `tb_hasil`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kondisi`

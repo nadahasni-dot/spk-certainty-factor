@@ -39,7 +39,108 @@
   <script src="<?= base_url('assets/adminlte/'); ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 
   <script src="<?= base_url('assets/scripts/globals.js') ?>"></script>
-  
+
+  <?php if ($menu == 'beranda') : ?>
+    <script>
+      // chart penyakit
+      var pieChartCanvas = $('#pieChartPenyakit').get(0).getContext('2d')
+      var pieData = {
+        labels: [
+          <?php
+          foreach ($hasil_penyakit as $penyakit) {
+            echo "'" . $penyakit['nama_penyakit'] . "',";
+          }
+          ?>
+        ],
+        datasets: [{
+          data: [
+            <?php
+            foreach ($hasil_penyakit as $penyakit) {
+              echo $penyakit['count_penyakit'] . ",";
+            }
+            ?>
+          ],
+          backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de']
+        }]
+      }
+      var pieOptions = {
+        legend: {
+          display: true,
+        }
+      }
+      // Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      // eslint-disable-next-line no-unused-vars
+      var pieChart = new Chart(pieChartCanvas, {
+        type: 'doughnut',
+        data: pieData,
+        options: pieOptions
+      })
+
+      // chart usia
+      var pieChartCanvasUsia = $('#pieChartUsia').get(0).getContext('2d')
+      var pieDataUsia = {
+        labels: [
+          <?php
+          foreach ($hasil_usia as $penyakit) {
+            echo "'" . $penyakit['usia'] . " tahun',";
+          }
+          ?>
+        ],
+        datasets: [{
+          data: [
+            <?php
+            foreach ($hasil_usia as $penyakit) {
+              echo $penyakit['count_penyakit'] . ",";
+            }
+            ?>
+          ],
+          backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de']
+        }]
+      }
+      // Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      // eslint-disable-next-line no-unused-vars
+      var pieChartUsia = new Chart(pieChartCanvasUsia, {
+        type: 'doughnut',
+        data: pieDataUsia,
+        options: pieOptions
+      })
+
+      //-----------------
+      // - END PIE CHART -
+      //-----------------
+
+      var pieChartCanvasKelamin = $('#pieChartKelamin').get(0).getContext('2d')
+      var pieDataKelamin = {
+        labels: [
+          <?php
+          foreach ($hasil_jenis_kelamin as $penyakit) {
+            echo "'" . $penyakit['jenis_kelamin'] . "',";
+          }
+          ?>
+        ],
+        datasets: [{
+          data: [
+            <?php
+            foreach ($hasil_jenis_kelamin as $penyakit) {
+              echo $penyakit['count_penyakit'] . ",";
+            }
+            ?>
+          ],
+          backgroundColor: ['#3c8dbc', '#f56954', '#d2d6de']
+        }]
+      }
+      // Create pie or douhnut chart
+      // You can switch between pie and douhnut using the method below.
+      // eslint-disable-next-line no-unused-vars
+      var pieChartKelamin = new Chart(pieChartCanvasKelamin, {
+        type: 'doughnut',
+        data: pieDataKelamin,
+        options: pieOptions
+      })
+    </script>
+  <?php endif; ?>
   <?php if ($menu == 'pengguna') : ?>
     <script src="<?= base_url('assets/scripts/pengguna.js') ?>"></script>
   <?php endif; ?>

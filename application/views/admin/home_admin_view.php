@@ -73,42 +73,138 @@
                         </div>
                         <!-- ./col -->
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                                        </ol>
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img class="d-block w-100" src="https://placehold.it/900x500/39CCCC/ffffff&text=I+Love+Bootstrap" alt="First slide">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="https://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="Second slide">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="https://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
-                                            </div>
-                                        </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                            <span class="carousel-control-custom-icon" aria-hidden="true">
-                                                <i class="fas fa-chevron-left"></i>
-                                            </span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                            <span class="carousel-control-custom-icon" aria-hidden="true">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
+
+                    <div class="row">
+                        <!-- penyakit -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Statistik Berdasar Penyakit</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
                                     </div>
                                 </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="chart-responsive">
+                                                <canvas id="pieChartPenyakit" height="150"></canvas>
+                                            </div>
+                                            <!-- ./chart-responsive -->
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer bg-light p-0">
+                                    <ul class="nav nav-pills flex-column">
+                                        <?php foreach ($hasil_penyakit as $penyakit) : ?>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <?= $penyakit['nama_penyakit']; ?>
+                                                    <span class="float-right text-info">
+                                                        <i class="fas fa-arrow-right text-sm"></i>
+                                                        <?= $penyakit['count_penyakit']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                                <!-- /.footer -->
                             </div>
+                            <!-- /.card -->
+                        </div>
+
+                        <!-- usia -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Statistik Berdasar Usia</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="chart-responsive">
+                                                <canvas id="pieChartUsia" height="150"></canvas>
+                                            </div>
+                                            <!-- ./chart-responsive -->
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer bg-light p-0">
+                                    <ul class="nav nav-pills flex-column">
+                                        <?php foreach ($hasil_usia as $penyakit) : ?>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <?= $penyakit['usia'] . ' tahun'; ?>
+                                                    <span class="float-right text-info">
+                                                        <i class="fas fa-arrow-right text-sm"></i>
+                                                        <?= $penyakit['count_penyakit']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                                <!-- /.footer -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+
+                        <!-- jenis kelamin -->
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Statistik Berdasar Jenis Kelamin</h3>
+
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="chart-responsive">
+                                                <canvas id="pieChartKelamin" height="150"></canvas>
+                                            </div>
+                                            <!-- ./chart-responsive -->
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer bg-light p-0">
+                                    <ul class="nav nav-pills flex-column">
+                                        <?php foreach ($hasil_jenis_kelamin as $penyakit) : ?>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <?= $penyakit['jenis_kelamin']; ?>
+                                                    <span class="float-right text-info">
+                                                        <i class="fas fa-arrow-right text-sm"></i>
+                                                        <?= $penyakit['count_penyakit']; ?></span>
+                                                </a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                                <!-- /.footer -->
+                            </div>
+                            <!-- /.card -->
                         </div>
                     </div>
                 </div>

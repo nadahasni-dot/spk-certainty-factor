@@ -33,6 +33,10 @@ class Pakar extends CI_Controller
         $data['count_pengetahuan'] = $this->Pengetahuan_model->countPengetahuan('all');
         $data['count_pakar'] = $this->User_model->countUser('all');
 
+        $data['hasil_penyakit'] = $this->Hasil_model->getHasil('chart_penyakit');
+        $data['hasil_usia'] = $this->Hasil_model->getHasil('chart_usia');
+        $data['hasil_jenis_kelamin'] = $this->Hasil_model->getHasil('chart_jenis_kelamin');
+
         $this->load->view('template/panel/header_view', $data);
         $this->load->view('template/panel/sidebar_pakar_view');
         $this->load->view('admin/home_admin_view');
@@ -381,7 +385,7 @@ class Pakar extends CI_Controller
         $data['sub_menu_action'] = null;
         // user data        
         $data['user'] = $this->User_model->getUser('id_user', $this->session->userdata('id_user'));
-        $data['hasil'] = $this->Hasil_model->getHasil('all');
+        $data['hasil'] = $this->Hasil_model->getHasil('all');        
 
         $this->load->view('template/panel/header_view', $data);
         $this->load->view('template/panel/sidebar_pakar_view');
