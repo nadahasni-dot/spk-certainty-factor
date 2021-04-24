@@ -49,13 +49,7 @@ class Diagnosa extends CI_Controller
 
         $this->form_validation->set_rules('kondisi[]', 'Kondisi', 'required');
 
-        if ($this->form_validation->run() == FALSE) {
-            // $this->load->view('template/panel/header_view', $data);
-            // $this->load->view('template/panel/sidebar_diagnosa_view');
-            // $this->load->view('diagnosa/diagnosa_test_view');
-            // $this->load->view('template/panel/control_view');
-            // $this->load->view('template/panel/footer_view');
-
+        if ($this->form_validation->run() == FALSE) {            
             $this->load->view('template/landing/landing_header_view', $data);
             $this->load->view('landing/diagnosa_view');
             $this->load->view('template/landing/landing_footer_view');
@@ -88,45 +82,52 @@ class Diagnosa extends CI_Controller
             $semua_penyakit = $this->Penyakit_model->getPenyakit('all');
 
             // ? perulangan menghitung CF tiap penyakit
-            foreach ($semua_penyakit as $penyakit) {
-                // ? inisiasi variabel CF untuk perhitungan
-                $cf = 0;
-                $cf_lama = 0;
+            foreach ($semua_penyakit as $penyakit) {         
+                // ** echo 'PERHITUNGAN PENYAKIT ' . $penyakit['nama_penyakit'] . ' =========== <br>';
 
                 // ? ambil semua basis pengetahuan dari penyakit saat ini berdasar id_penyakit
                 $pengetahuan_terkait = $this->Pengetahuan_model->getPengetahuan('id_penyakit', $penyakit['id_penyakit']);
 
+                // ? inisiasi variabel CF untuk perhitungan
+                $cf = 0;
+                $cf_lama = 0;
+                // ! perulangan menghitung CF[H,E] 1, CF[H,E] 2, dst
+                // ! urutan untuk penanda urutan CF[H,E]
+                $urutancf = 1;
+
                 // ? hitung dan cek tiap pengetahuan terkait
                 foreach ($pengetahuan_terkait as $pengetahuan) {
-                    // ? cek tiap gejala pada pengetahuan terkait
+                    // ? cek tiap gejala pada pengetahuan terkait                    
+
                     foreach ($input_gejala_kondisi as $gejala) {
                         $gejala = explode("_", $gejala);
+
                         // ? jika gejala pada pengetahuan sama dengan gejala yang diinput pengguna
                         if ($pengetahuan['id_gejala'] == $gejala[0]) {
-                            // ? ambil kondisi terpilih untuk mengakses bobot
+                            // ? ambil kondisi terpilih untuk mengakses cf_kondisi
                             $kondisi_terpilih = $this->Kondisi_model->getKondisi('id_kondisi', $gejala[1]);
 
-                            // ? perhitungan rumus CF
-                            $cf = ($pengetahuan['mb'] - $pengetahuan['md']) * $kondisi_terpilih['bobot'];
-
-                            // ? jika CF1 dan CF2 keduanya posistif
-                            if (($cf >= 0) && ($cf * $cf_lama >= 0)) {
+                            // ? perhitungan rumus CF iterasi saat ini
+                            $cf = $pengetahuan['cf_pakar'] * $kondisi_terpilih['cf_kondisi'];
+                            
+                            // ? iterasi pertama maka CF 1 langsung menjadi CF OLD
+                            if ($urutancf <= 1) {
+                                $cf_lama = $cf;
+                                // ** echo 'urutan: ' . $urutancf . '<br>';
+                                // ** echo 'CF OLD: ' . $cf_lama . '<br><br>';
+                            } else { // ? iselain iterasi pertama maka gunakan rumus perhitungan dengan cf lama sebelumnya
+                                // ** echo 'urutan: ' . $urutancf . '<br>';
                                 $cf_lama = $cf_lama + ($cf * (1 - $cf_lama));
+                                // ** echo 'CF OLD[' . $urutancf . ']: CF OLD[' . ($urutancf - 1) . '] + (' . $cf . ' * (1 - CF OLD[' . ($urutancf - 1) . '])) <br>';
+                                // ** echo 'CF OLD[' . $urutancf . ']: ' . $cf_lama . ' + (' . $cf . ' * (1 - ' . $cf_lama . ')) <br>';
+                                // ** echo 'CF OLD: ' . $cf_lama . '<br><br>';
                             }
 
-                            // ? jika salah satu negatif
-                            if ($cf * $cf_lama < 0) {
-                                $cf_lama = ($cf_lama + $cf) / (1 - Min(abs($cf_lama), abs($cf)));
-                            }
-
-                            // ? jika CF1 dan CF2 keduanya negative
-                            if (($cf < 0) && ($cf * $cf_lama >= 0)) {
-                                $cf_lama = $cf_lama + ($cf * (1 + $cf_lama));
-                            }
+                            $urutancf++;                           
                         }
                     }
                 }
-                if ($cf_lama > 0) {
+                if ($cf_lama > 0) { // ! jika nilai tidak negatif maka tambahkan ke daftar diagnosa
                     //  ? tambahkan penyakit ke daftar list jika sesuai gejala dan perhitungan
                     $list_penyakit += array($penyakit['id_penyakit'] => number_format($cf_lama, 4));
                 }
@@ -134,6 +135,12 @@ class Diagnosa extends CI_Controller
 
             // * mengurutkan dari nilai tertinggi ke rendah
             arsort($list_penyakit);
+
+            // ** echo '<pre>';
+            // ** var_dump($list_penyakit);
+            // ** echo '</pre>';
+
+            // ** die;
 
             // * perhitungan CF END
 

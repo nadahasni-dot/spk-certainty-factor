@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Apr 2021 pada 08.58
+-- Waktu pembuatan: 24 Apr 2021 pada 09.46
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.14
 
@@ -31,24 +31,23 @@ CREATE TABLE `tb_basis_pengetahuan` (
   `id_basis_pengetahuan` int(11) NOT NULL,
   `id_penyakit` int(11) NOT NULL,
   `id_gejala` int(11) NOT NULL,
-  `mb` float NOT NULL,
-  `md` float NOT NULL
+  `cf_pakar` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_basis_pengetahuan`
 --
 
-INSERT INTO `tb_basis_pengetahuan` (`id_basis_pengetahuan`, `id_penyakit`, `id_gejala`, `mb`, `md`) VALUES
-(4, 4, 8, 0.8, 0.2),
-(5, 4, 9, 0.6, 0.2),
-(6, 4, 10, 0.6, 0),
-(7, 4, 11, 1, 0),
-(8, 4, 12, 0.8, 0),
-(9, 5, 13, 0.6, 0.2),
-(10, 5, 14, 0.8, 0),
-(11, 5, 15, 0.8, 0.2),
-(12, 5, 16, 1, 0);
+INSERT INTO `tb_basis_pengetahuan` (`id_basis_pengetahuan`, `id_penyakit`, `id_gejala`, `cf_pakar`) VALUES
+(4, 4, 8, 0.8),
+(5, 4, 9, 0.6),
+(6, 4, 10, 0.6),
+(7, 4, 11, 1),
+(8, 4, 12, 0.8),
+(9, 5, 13, 0.6),
+(10, 5, 14, 0.8),
+(11, 5, 15, 0.8),
+(12, 5, 16, 1);
 
 -- --------------------------------------------------------
 
@@ -105,7 +104,9 @@ INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `hasil_penyakit`, `hasil_geja
 (5, 5, '{\"5\":\"0.8091\",\"4\":\"0.5509\"}', '{\"16\":\"2\",\"15\":\"5\",\"13\":\"4\",\"10\":\"2\",\"9\":\"3\",\"8\":\"5\"}', 0.8091, 'Mawar', 50, 'perempuan', 'Jl Mastrip 10', 1618893788, NULL),
 (12, 5, '{\"5\":\"0.9054\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"4\",\"13\":\"5\",\"12\":\"6\",\"11\":\"8\"}', 0.9054, 'Siti', 44, 'perempuan', 'jl Manggar 55', 1618894415, NULL),
 (13, 4, '{\"4\":\"1.0000\"}', '{\"11\":\"1\",\"10\":\"1\",\"9\":\"1\",\"8\":\"2\"}', 1, 'Kak Ros', 27, 'perempuan', 'Jl Kampung Durian Runtuh', 1618901488, NULL),
-(14, 4, '{\"4\":\"1.0000\"}', '{\"16\":\"5\",\"15\":\"7\",\"14\":\"5\",\"13\":\"4\",\"12\":\"6\",\"11\":\"1\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 1, 'Atuk Dalang', 27, 'laki-laki', 'Jl Kampung Durian Runtuh 22', 1618901624, NULL);
+(14, 4, '{\"4\":\"1.0000\"}', '{\"16\":\"5\",\"15\":\"7\",\"14\":\"5\",\"13\":\"4\",\"12\":\"6\",\"11\":\"1\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 1, 'Atuk Dalang', 27, 'laki-laki', 'Jl Kampung Durian Runtuh 22', 1618901624, NULL),
+(15, 5, '{\"5\":\"0.8388\",\"4\":\"0.4487\"}', '{\"16\":\"4\",\"15\":\"3\",\"14\":\"4\",\"13\":\"4\",\"12\":\"4\",\"11\":\"5\",\"10\":\"2\",\"9\":\"5\",\"8\":\"5\"}', 0.8388, 'Nada Hasni Muhammad', 22, 'laki-laki', 'jl diponegoro', 1619250055, NULL),
+(16, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619250337, NULL);
 
 -- --------------------------------------------------------
 
@@ -116,14 +117,14 @@ INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `hasil_penyakit`, `hasil_geja
 CREATE TABLE `tb_kondisi` (
   `id_kondisi` int(11) NOT NULL,
   `nama_kondisi` varchar(255) NOT NULL,
-  `bobot` float NOT NULL
+  `cf_kondisi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `tb_kondisi`
 --
 
-INSERT INTO `tb_kondisi` (`id_kondisi`, `nama_kondisi`, `bobot`) VALUES
+INSERT INTO `tb_kondisi` (`id_kondisi`, `nama_kondisi`, `cf_kondisi`) VALUES
 (1, 'Pasti Ya', 1),
 (2, 'Hampir Pasti Ya', 0.8),
 (3, 'Kemungkinan Besar Ya', 0.6),
@@ -264,7 +265,7 @@ ALTER TABLE `tb_gejala`
 -- AUTO_INCREMENT untuk tabel `tb_hasil`
 --
 ALTER TABLE `tb_hasil`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kondisi`
