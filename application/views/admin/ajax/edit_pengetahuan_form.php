@@ -18,10 +18,6 @@
     </select>
 </div>
 <div class="form-group">
-    <label for="mb">MB</label>
-    <input value="<?= $pengetahuan['mb'] ?>" id="mb" type="number" step="0.1" class="form-control" name="mb" placeholder="mb dalam decimal (contoh: 1.0, 0.4, dst)" required>
-</div>
-<div class="form-group">
-    <label for="md">MD</label>
-    <input value="<?= $pengetahuan['md'] ?>" id="md" type="number" step="0.1" class="form-control" name="md" placeholder="md dalam decimal (contoh: 1.0, 0.4, dst)" required>
+    <label for="cf_pakar">CF PAKAR</label>
+    <input value="<?= $pengetahuan['cf_pakar'] ?>" id="cf_pakar" type="number" step="0.1" class="form-control" name="cf_pakar" placeholder="bobot dalam decimal (contoh: 1.0, 0.4, dst)" required>
 </div>
