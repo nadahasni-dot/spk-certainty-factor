@@ -49,7 +49,7 @@ class Diagnosa extends CI_Controller
 
         $this->form_validation->set_rules('kondisi[]', 'Kondisi', 'required');
 
-        if ($this->form_validation->run() == FALSE) {            
+        if ($this->form_validation->run() == FALSE) {
             $this->load->view('template/landing/landing_header_view', $data);
             $this->load->view('landing/diagnosa_view');
             $this->load->view('template/landing/landing_footer_view');
@@ -82,7 +82,7 @@ class Diagnosa extends CI_Controller
             $semua_penyakit = $this->Penyakit_model->getPenyakit('all');
 
             // ? perulangan menghitung CF tiap penyakit
-            foreach ($semua_penyakit as $penyakit) {         
+            foreach ($semua_penyakit as $penyakit) {
                 // echo 'PERHITUNGAN PENYAKIT ' . $penyakit['nama_penyakit'] . ' =========== <br>';
 
                 // ? ambil semua basis pengetahuan dari penyakit saat ini berdasar id_penyakit
@@ -109,25 +109,27 @@ class Diagnosa extends CI_Controller
 
                             // ? perhitungan rumus CF gejala iterasi saat ini
                             $cf = $pengetahuan['cf_pakar'] * $kondisi_terpilih['cf_kondisi'];
-                            
+
+                            // echo 'urutan: ' . $urutancf . '<br>';
+                            // echo 'CF GEJALA SAAT INI: CF PAKAR * CF KONDISI DIPILIH USER <br>';
+                            // echo 'CF GEJALA SAAT INI:' . $pengetahuan['cf_pakar'] . ' * ' . $kondisi_terpilih['cf_kondisi'] . '<br>';
+                            // echo 'CF GEJALA SAAT ini: ' . $cf . '<br><br>';
+
                             // ? iterasi pertama maka CF 1 langsung menjadi CF OLD
                             if ($urutancf <= 1) {
                                 $cf_lama = $cf;
 
-                                // echo 'urutan: ' . $urutancf . '<br>';
-                                // echo 'CF OLD: ' . $urutancf . '<br>';
                                 // echo 'CF OLD: ' . $cf_lama . '<br><br>';
-                            } else { // ? selain iterasi pertama maka gunakan rumus perhitungan dengan cf lama sebelumnya (CF COMBINE)
-                                // echo 'urutan: ' . $urutancf . '<br>';
+                            } else { // ? selain iterasi pertama maka gunakan rumus perhitungan dengan cf lama sebelumnya (CF COMBINE)                                
                                 // echo 'CF OLD[' . $urutancf . ']: CF OLD[' . ($urutancf - 1) . '] + (' . $cf . ' * (1 - CF OLD[' . ($urutancf - 1) . '])) <br>';
                                 // echo 'CF OLD[' . $urutancf . ']: ' . $cf_lama . ' + (' . $cf . ' * (1 - ' . $cf_lama . ')) <br>';
-                                
+
                                 $cf_lama = $cf_lama + ($cf * (1 - $cf_lama));
 
                                 // echo 'CF OLD: ' . $cf_lama . '<br><br>';
                             }
 
-                            $urutancf++;                           
+                            $urutancf++;
                         }
                     }
                 }
