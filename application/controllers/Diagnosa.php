@@ -107,7 +107,7 @@ class Diagnosa extends CI_Controller
                             // ? ambil kondisi terpilih untuk mengakses cf_kondisi
                             $kondisi_terpilih = $this->Kondisi_model->getKondisi('id_kondisi', $gejala[1]);
 
-                            // ? perhitungan rumus CF iterasi saat ini
+                            // ? perhitungan rumus CF gejala iterasi saat ini
                             $cf = $pengetahuan['cf_pakar'] * $kondisi_terpilih['cf_kondisi'];
                             
                             // ? iterasi pertama maka CF 1 langsung menjadi CF OLD
@@ -117,7 +117,7 @@ class Diagnosa extends CI_Controller
                                 // echo 'urutan: ' . $urutancf . '<br>';
                                 // echo 'CF OLD: ' . $urutancf . '<br>';
                                 // echo 'CF OLD: ' . $cf_lama . '<br><br>';
-                            } else { // ? iselain iterasi pertama maka gunakan rumus perhitungan dengan cf lama sebelumnya
+                            } else { // ? selain iterasi pertama maka gunakan rumus perhitungan dengan cf lama sebelumnya (CF COMBINE)
                                 // echo 'urutan: ' . $urutancf . '<br>';
                                 // echo 'CF OLD[' . $urutancf . ']: CF OLD[' . ($urutancf - 1) . '] + (' . $cf . ' * (1 - CF OLD[' . ($urutancf - 1) . '])) <br>';
                                 // echo 'CF OLD[' . $urutancf . ']: ' . $cf_lama . ' + (' . $cf . ' * (1 - ' . $cf_lama . ')) <br>';
