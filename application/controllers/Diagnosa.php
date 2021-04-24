@@ -83,7 +83,7 @@ class Diagnosa extends CI_Controller
 
             // ? perulangan menghitung CF tiap penyakit
             foreach ($semua_penyakit as $penyakit) {         
-                // ** echo 'PERHITUNGAN PENYAKIT ' . $penyakit['nama_penyakit'] . ' =========== <br>';
+                // echo 'PERHITUNGAN PENYAKIT ' . $penyakit['nama_penyakit'] . ' =========== <br>';
 
                 // ? ambil semua basis pengetahuan dari penyakit saat ini berdasar id_penyakit
                 $pengetahuan_terkait = $this->Pengetahuan_model->getPengetahuan('id_penyakit', $penyakit['id_penyakit']);
@@ -113,14 +113,18 @@ class Diagnosa extends CI_Controller
                             // ? iterasi pertama maka CF 1 langsung menjadi CF OLD
                             if ($urutancf <= 1) {
                                 $cf_lama = $cf;
-                                // ** echo 'urutan: ' . $urutancf . '<br>';
-                                // ** echo 'CF OLD: ' . $cf_lama . '<br><br>';
+
+                                // echo 'urutan: ' . $urutancf . '<br>';
+                                // echo 'CF OLD: ' . $urutancf . '<br>';
+                                // echo 'CF OLD: ' . $cf_lama . '<br><br>';
                             } else { // ? iselain iterasi pertama maka gunakan rumus perhitungan dengan cf lama sebelumnya
-                                // ** echo 'urutan: ' . $urutancf . '<br>';
+                                // echo 'urutan: ' . $urutancf . '<br>';
+                                // echo 'CF OLD[' . $urutancf . ']: CF OLD[' . ($urutancf - 1) . '] + (' . $cf . ' * (1 - CF OLD[' . ($urutancf - 1) . '])) <br>';
+                                // echo 'CF OLD[' . $urutancf . ']: ' . $cf_lama . ' + (' . $cf . ' * (1 - ' . $cf_lama . ')) <br>';
+                                
                                 $cf_lama = $cf_lama + ($cf * (1 - $cf_lama));
-                                // ** echo 'CF OLD[' . $urutancf . ']: CF OLD[' . ($urutancf - 1) . '] + (' . $cf . ' * (1 - CF OLD[' . ($urutancf - 1) . '])) <br>';
-                                // ** echo 'CF OLD[' . $urutancf . ']: ' . $cf_lama . ' + (' . $cf . ' * (1 - ' . $cf_lama . ')) <br>';
-                                // ** echo 'CF OLD: ' . $cf_lama . '<br><br>';
+
+                                // echo 'CF OLD: ' . $cf_lama . '<br><br>';
                             }
 
                             $urutancf++;                           
@@ -136,11 +140,10 @@ class Diagnosa extends CI_Controller
             // * mengurutkan dari nilai tertinggi ke rendah
             arsort($list_penyakit);
 
-            // ** echo '<pre>';
-            // ** var_dump($list_penyakit);
-            // ** echo '</pre>';
-
-            // ** die;
+            // echo '<pre>';
+            // var_dump($list_penyakit);
+            // echo '</pre>';
+            // die;
 
             // * perhitungan CF END
 
