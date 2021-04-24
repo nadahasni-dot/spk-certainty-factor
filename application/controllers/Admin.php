@@ -411,8 +411,7 @@ class Admin extends CI_Controller
         // validation forms                
         $this->form_validation->set_rules('id_penyakit', 'Penyakit', 'required|trim');
         $this->form_validation->set_rules('id_gejala', 'Gejala', 'required|trim');
-        $this->form_validation->set_rules('mb', 'MB', 'required|trim|decimal');
-        $this->form_validation->set_rules('md', 'MD', 'required|trim|decimal');
+        $this->form_validation->set_rules('cf_pakar', 'CF PAKAR', 'required|trim|decimal');
 
         if ($this->form_validation->run() == FALSE) { // * jika belum input form
             $this->load->view('template/panel/header_view', $data);
@@ -424,8 +423,7 @@ class Admin extends CI_Controller
             $submitType = $this->input->post('submit-type');
             $id_penyakit = $this->input->post('id_penyakit');
             $id_gejala = $this->input->post('id_gejala');
-            $mb = $this->input->post('mb');
-            $md = $this->input->post('md');
+            $mb = $this->input->post('cf_pakar');
 
             if ($submitType == 'Tambah') { // * jika tambah data
 
@@ -433,8 +431,7 @@ class Admin extends CI_Controller
                 $data_pengetahuan = array(
                     'id_penyakit' => $id_penyakit,
                     'id_gejala' => $id_gejala,
-                    'mb' => $mb,
-                    'md' => $md,
+                    'cf_pakar' => $mb,
                 );
 
                 if ($this->Pengetahuan_model->insertPengetahuan($data_pengetahuan)) { // * jika berhasil input pengetahuan
@@ -452,8 +449,7 @@ class Admin extends CI_Controller
                 $data_update_pengetahuan = array(
                     'id_penyakit' => $id_penyakit,
                     'id_gejala' => $id_gejala,
-                    'mb' => $mb,
-                    'md' => $md,
+                    'cf_pakar' => $mb,                    
                 );
 
                 if ($this->Pengetahuan_model->updatePengetahuan('id_basis_pengetahuan', $data_update_pengetahuan, $id_basis_pengetahuan)) { // * jika berhasil update pengetahuan
@@ -540,7 +536,7 @@ class Admin extends CI_Controller
 
         // validation forms                
         $this->form_validation->set_rules('nama_kondisi', 'Nama Kondisi', 'required|trim');
-        $this->form_validation->set_rules('bobot', 'Bobot', 'required|trim|decimal');
+        $this->form_validation->set_rules('cf_kondisi', 'CF KONDISI', 'required|trim|decimal');
 
         if ($this->form_validation->run() == FALSE) { // * jika belum input form
             $this->load->view('template/panel/header_view', $data);
@@ -551,14 +547,14 @@ class Admin extends CI_Controller
         } else { // * jika sudah input
             $submitType = $this->input->post('submit-type');
             $nama_kondisi = $this->input->post('nama_kondisi');
-            $bobot = $this->input->post('bobot');
+            $bobot = $this->input->post('cf_kondisi');
 
             if ($submitType == 'Tambah') { // * jika tambah data
 
                 // * data kondisi yang akan diinput
                 $data_kondisi = array(
                     'nama_kondisi' => $nama_kondisi,
-                    'bobot' => $bobot,
+                    'cf_kondisi' => $bobot,
                 );
 
                 if ($this->Kondisi_model->insertKondisi($data_kondisi)) { // * jika berhasil input kondisi
@@ -575,7 +571,7 @@ class Admin extends CI_Controller
 
                 $data_update_kondisi = array(
                     'nama_kondisi' => $nama_kondisi,
-                    'bobot' => $bobot,
+                    'cf_kondisi' => $bobot,
                 );
 
                 if ($this->Kondisi_model->updateKondisi('id_kondisi', $data_update_kondisi, $id_kondisi)) { // * jika berhasil update kondisi

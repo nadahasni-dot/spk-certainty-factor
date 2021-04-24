@@ -39,8 +39,7 @@
                                         <th>No</th>
                                         <th>Nama Penyakit</th>
                                         <th>Nama Gejala</th>
-                                        <th>MB</th>
-                                        <th>MD</th>
+                                        <th>CF PAKAR</th>                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,8 +57,7 @@
                                                 </p>
                                             </td>
                                             <td class="align-middle"><?= $row['nama_gejala']; ?></td>
-                                            <td class="align-middle"><?= $row['mb']; ?></td>
-                                            <td class="align-middle"><?= $row['md']; ?></td>
+                                            <td class="align-middle"><?= $row['cf_pakar']; ?></td>                                            
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -68,8 +66,7 @@
                                         <th>No</th>
                                         <th>Nama Penyakit</th>
                                         <th>Nama Gejala</th>
-                                        <th>MB</th>
-                                        <th>MD</th>
+                                        <th>CF PAKAR</th>                                        
                                     </tr>
                                 </tfoot>
                             </table>
@@ -118,13 +115,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="mbAdd">MB</label>
-                        <input id="mbAdd" type="number" step="0.1" class="form-control" name="mb" placeholder="mb dalam decimal (contoh: 1.0, 0.4, dst)" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mdAdd">MD</label>
-                        <input id="mdAdd" type="number" step="0.1" class="form-control" name="md" placeholder="md dalam decimal (contoh: 1.0, 0.4, dst)" required>
-                    </div>
+                        <label for="cfPakarAdd">CF PAKAR</label>
+                        <input id="cfPakarAdd" type="number" step="0.1" class="form-control" name="cf_pakar" placeholder="mb dalam decimal (contoh: 1.0, 0.4, dst)" required>
+                    </div>                    
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

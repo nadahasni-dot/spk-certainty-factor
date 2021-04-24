@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Kondisi</th>
-                                        <th>Bobot</th>
+                                        <th>CF KONDISI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +55,7 @@
                                                     <a href="<?= base_url('admin/deletekondisi/') . $row['id_kondisi']; ?>" class="text-small text-danger action-delete">Hapus</a>
                                                 </p>
                                             </td>
-                                            <td class="align-middle"><?= $row['bobot']; ?></td>
+                                            <td class="align-middle"><?= $row['cf_kondisi']; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -63,7 +63,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Kondisi</th>
-                                        <th>Bobot</th>
+                                        <th>CF KONDISI</th>
                                     </tr>
                                 </tfoot>
                             </table>
