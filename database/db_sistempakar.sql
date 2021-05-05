@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Apr 2021 pada 09.46
+-- Waktu pembuatan: 05 Bulan Mei 2021 pada 05.14
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.14
 
@@ -106,7 +106,11 @@ INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `hasil_penyakit`, `hasil_geja
 (13, 4, '{\"4\":\"1.0000\"}', '{\"11\":\"1\",\"10\":\"1\",\"9\":\"1\",\"8\":\"2\"}', 1, 'Kak Ros', 27, 'perempuan', 'Jl Kampung Durian Runtuh', 1618901488, NULL),
 (14, 4, '{\"4\":\"1.0000\"}', '{\"16\":\"5\",\"15\":\"7\",\"14\":\"5\",\"13\":\"4\",\"12\":\"6\",\"11\":\"1\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 1, 'Atuk Dalang', 27, 'laki-laki', 'Jl Kampung Durian Runtuh 22', 1618901624, NULL),
 (15, 5, '{\"5\":\"0.8388\",\"4\":\"0.4487\"}', '{\"16\":\"4\",\"15\":\"3\",\"14\":\"4\",\"13\":\"4\",\"12\":\"4\",\"11\":\"5\",\"10\":\"2\",\"9\":\"5\",\"8\":\"5\"}', 0.8388, 'Nada Hasni Muhammad', 22, 'laki-laki', 'jl diponegoro', 1619250055, NULL),
-(16, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619250337, NULL);
+(16, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619250337, NULL),
+(17, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619251136, NULL),
+(18, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619251192, NULL),
+(19, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619251448, NULL),
+(20, 5, '{\"5\":\"0.9228\",\"4\":\"0.8919\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"5\",\"13\":\"3\",\"12\":\"5\",\"11\":\"6\",\"10\":\"2\",\"9\":\"3\",\"8\":\"1\"}', 0.9228, 'Nada Hasni Muhammad', 21, 'laki-laki', 'asdasdas', 1619252114, NULL);
 
 -- --------------------------------------------------------
 
@@ -116,6 +120,7 @@ INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `hasil_penyakit`, `hasil_geja
 
 CREATE TABLE `tb_kondisi` (
   `id_kondisi` int(11) NOT NULL,
+  `id_user` int(11) DEFAULT NULL,
   `nama_kondisi` varchar(255) NOT NULL,
   `cf_kondisi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -124,16 +129,16 @@ CREATE TABLE `tb_kondisi` (
 -- Dumping data untuk tabel `tb_kondisi`
 --
 
-INSERT INTO `tb_kondisi` (`id_kondisi`, `nama_kondisi`, `cf_kondisi`) VALUES
-(1, 'Pasti Ya', 1),
-(2, 'Hampir Pasti Ya', 0.8),
-(3, 'Kemungkinan Besar Ya', 0.6),
-(4, 'Mungkin Ya', 0.4),
-(5, 'Tidak Tahu', -0.2),
-(6, 'Mungkin Tidak', -0.4),
-(7, 'Kemungkinan Besar Tidak', -0.6),
-(8, 'Hampir Pasti Tidak', -0.8),
-(9, 'Pasti Tidak', -1);
+INSERT INTO `tb_kondisi` (`id_kondisi`, `id_user`, `nama_kondisi`, `cf_kondisi`) VALUES
+(1, 1, 'Pasti Ya', 1),
+(2, 1, 'Hampir Pasti Ya', 0.8),
+(3, 1, 'Kemungkinan Besar Ya', 0.6),
+(4, 1, 'Mungkin Ya', 0.4),
+(5, 1, 'Tidak Tahu', -0.2),
+(6, 1, 'Mungkin Tidak', -0.4),
+(7, 1, 'Kemungkinan Besar Tidak', -0.6),
+(8, 1, 'Hampir Pasti Tidak', -0.8),
+(9, 1, 'Pasti Tidak', -1);
 
 -- --------------------------------------------------------
 
@@ -224,7 +229,8 @@ ALTER TABLE `tb_hasil`
 -- Indeks untuk tabel `tb_kondisi`
 --
 ALTER TABLE `tb_kondisi`
-  ADD PRIMARY KEY (`id_kondisi`);
+  ADD PRIMARY KEY (`id_kondisi`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indeks untuk tabel `tb_penyakit`
@@ -253,7 +259,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_basis_pengetahuan`
 --
 ALTER TABLE `tb_basis_pengetahuan`
-  MODIFY `id_basis_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_basis_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_gejala`
@@ -265,13 +271,13 @@ ALTER TABLE `tb_gejala`
 -- AUTO_INCREMENT untuk tabel `tb_hasil`
 --
 ALTER TABLE `tb_hasil`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kondisi`
 --
 ALTER TABLE `tb_kondisi`
-  MODIFY `id_kondisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_kondisi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_penyakit`
@@ -307,6 +313,12 @@ ALTER TABLE `tb_basis_pengetahuan`
 --
 ALTER TABLE `tb_hasil`
   ADD CONSTRAINT `tb_hasil_ibfk_1` FOREIGN KEY (`id_penyakit`) REFERENCES `tb_penyakit` (`id_penyakit`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `tb_kondisi`
+--
+ALTER TABLE `tb_kondisi`
+  ADD CONSTRAINT `tb_kondisi_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `tb_token`
