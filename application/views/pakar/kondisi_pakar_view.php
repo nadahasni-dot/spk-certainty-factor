@@ -98,8 +98,8 @@
                         <input id="namaKondisiAdd" type="text" class="form-control" name="nama_kondisi" placeholder="nama kondisi baru" required>
                     </div>
                     <div class="form-group">
-                        <label for="bobotAdd">Bobot</label>
-                        <input id="bobotAdd" type="number" step="0.1" class="form-control" name="bobot" placeholder="bobot dalam decimal (contoh: 1.0, 0.4, dst)" required>
+                        <label for="cf_kondisiAdd">Bobot</label>
+                        <input id="cf_kondisiAdd" type="number" step="0.1" class="form-control" name="cf_kondisi" placeholder="bobot dalam decimal (contoh: 1.0, 0.4, dst)" required>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">

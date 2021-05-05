@@ -8,7 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="apple-touch-icon" sizes="57x57" href="<?= base_url('assets/icons'); ?>/apple-icon-57x57.png">
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="<?= base_url('assets/icons'); ?>/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="<?= base_url('assets/icons'); ?>/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="<?= base_url('assets/icons'); ?>/apple-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/icons'); ?>/apple-icon-76x76.png">
@@ -24,7 +24,7 @@
   <link rel="manifest" href="<?= base_url('assets/icons'); ?>/manifest.json">
   <meta name="msapplication-TileColor" content="#498FE0">
   <meta name="msapplication-TileImage" content="<?= base_url('assets/icons'); ?>/ms-icon-144x144.png">
-  <meta name="theme-color" content="#498FE0">
+  <meta name="theme-color" content="#498FE0"> -->
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?= base_url('assets/adminlte'); ?>/plugins/fontawesome-free/css/all.min.css">

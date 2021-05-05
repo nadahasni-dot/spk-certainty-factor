@@ -553,6 +553,7 @@ class Admin extends CI_Controller
 
                 // * data kondisi yang akan diinput
                 $data_kondisi = array(
+                    'id_user' => $this->session->userdata('id_user'),
                     'nama_kondisi' => $nama_kondisi,
                     'cf_kondisi' => $bobot,
                 );
