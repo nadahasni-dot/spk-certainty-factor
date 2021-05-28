@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Bulan Mei 2021 pada 05.14
--- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.14
+-- Waktu pembuatan: 28 Bulan Mei 2021 pada 09.10
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,15 +40,41 @@ CREATE TABLE `tb_basis_pengetahuan` (
 --
 
 INSERT INTO `tb_basis_pengetahuan` (`id_basis_pengetahuan`, `id_penyakit`, `id_gejala`, `cf_pakar`) VALUES
-(4, 4, 8, 0.8),
-(5, 4, 9, 0.6),
-(6, 4, 10, 0.6),
-(7, 4, 11, 1),
-(8, 4, 12, 0.8),
-(9, 5, 13, 0.6),
-(10, 5, 14, 0.8),
-(11, 5, 15, 0.8),
-(12, 5, 16, 1);
+(17, 8, 22, 0.4),
+(18, 8, 20, 0.2),
+(19, 8, 21, 0.2),
+(20, 8, 23, 1),
+(21, 9, 20, 0.2),
+(22, 9, 21, 0.2),
+(23, 9, 22, 0.4),
+(24, 9, 24, 1),
+(25, 10, 22, 0.4),
+(26, 10, 20, 0.2),
+(27, 10, 25, 0.5),
+(28, 10, 26, 1),
+(29, 11, 21, 0.2),
+(30, 11, 22, 0.4),
+(31, 11, 20, 0.4),
+(32, 11, 27, 0.8),
+(33, 11, 28, 1),
+(34, 12, 21, 0.2),
+(35, 12, 22, 0.4),
+(36, 12, 20, 0.4),
+(37, 12, 27, 0.8),
+(38, 12, 29, 1),
+(39, 13, 22, 0.2),
+(40, 13, 20, 0.4),
+(41, 13, 27, 0.8),
+(42, 13, 30, 1),
+(43, 14, 22, 0.2),
+(44, 14, 31, 0.6),
+(45, 14, 32, 0.5),
+(46, 14, 33, 1),
+(47, 15, 34, 0.5),
+(48, 15, 35, 0.6),
+(49, 15, 36, 0.4),
+(50, 15, 37, 1),
+(51, 15, 38, 0.5);
 
 -- --------------------------------------------------------
 
@@ -65,15 +92,25 @@ CREATE TABLE `tb_gejala` (
 --
 
 INSERT INTO `tb_gejala` (`id_gejala`, `nama_gejala`) VALUES
-(8, 'Rasa pegal di kepala'),
-(9, 'Mudah capek'),
-(10, 'Gampang mengantuk'),
-(11, 'Pegal sampai ke pundak'),
-(12, 'Kaki bengkak'),
-(13, 'Nyeri sendi saat bangun tidur'),
-(14, 'Rasa panas pada sendi'),
-(15, 'Jempol kaki terasa nyeri'),
-(16, 'Persendian susah digerakkan');
+(20, 'Wajah terasa gatal'),
+(21, 'Terdapat sel kulit mati pada wajah'),
+(22, 'Kulit berminyak'),
+(23, 'Terdapat benjolan kecil dan sedikit menonjol serta bewarana hitam'),
+(24, 'Terdapat benjolan kecil bewarna putih kecil dan tidak sakit'),
+(25, 'terdapat ruam pada kulit'),
+(26, 'Terdapat benjolan kecil bewarna merah'),
+(27, 'Sakit ketika disentuh'),
+(28, 'Terdapat benjolan kecil dan bernanah pada ujung'),
+(29, 'Terdapat benjolan agak besar dan keras'),
+(30, 'Terdapat benjolan besar berisi nanah'),
+(31, 'Terdapat benjolan keras dan padat'),
+(32, 'Terdapat lesi pada wajah'),
+(33, 'Terdapat benjolan-benjolan besar berkelompok'),
+(34, 'Fluktuaktif demam'),
+(35, 'Nyeri sendi dengan pembengkakan'),
+(36, 'Berat badan turun dan nafsu makan turun'),
+(37, 'Jerawat ulserasi dan inflamasi pada pungggung dan dada'),
+(38, 'Penurunan aktivitas fisik');
 
 -- --------------------------------------------------------
 
@@ -100,17 +137,7 @@ CREATE TABLE `tb_hasil` (
 --
 
 INSERT INTO `tb_hasil` (`id_hasil`, `id_penyakit`, `hasil_penyakit`, `hasil_gejala`, `hasil_nilai`, `nama`, `usia`, `jenis_kelamin`, `alamat`, `hasil_created`, `hasil_updated`) VALUES
-(4, 5, '{\"5\":\"0.9826\",\"4\":\"0.8638\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"1\",\"13\":\"2\",\"12\":\"1\",\"11\":\"6\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 0.9826, 'Fariz Gustav', 21, 'laki-laki', 'Jl Gebang', 1618893660, NULL),
-(5, 5, '{\"5\":\"0.8091\",\"4\":\"0.5509\"}', '{\"16\":\"2\",\"15\":\"5\",\"13\":\"4\",\"10\":\"2\",\"9\":\"3\",\"8\":\"5\"}', 0.8091, 'Mawar', 50, 'perempuan', 'Jl Mastrip 10', 1618893788, NULL),
-(12, 5, '{\"5\":\"0.9054\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"4\",\"13\":\"5\",\"12\":\"6\",\"11\":\"8\"}', 0.9054, 'Siti', 44, 'perempuan', 'jl Manggar 55', 1618894415, NULL),
-(13, 4, '{\"4\":\"1.0000\"}', '{\"11\":\"1\",\"10\":\"1\",\"9\":\"1\",\"8\":\"2\"}', 1, 'Kak Ros', 27, 'perempuan', 'Jl Kampung Durian Runtuh', 1618901488, NULL),
-(14, 4, '{\"4\":\"1.0000\"}', '{\"16\":\"5\",\"15\":\"7\",\"14\":\"5\",\"13\":\"4\",\"12\":\"6\",\"11\":\"1\",\"10\":\"3\",\"9\":\"4\",\"8\":\"4\"}', 1, 'Atuk Dalang', 27, 'laki-laki', 'Jl Kampung Durian Runtuh 22', 1618901624, NULL),
-(15, 5, '{\"5\":\"0.8388\",\"4\":\"0.4487\"}', '{\"16\":\"4\",\"15\":\"3\",\"14\":\"4\",\"13\":\"4\",\"12\":\"4\",\"11\":\"5\",\"10\":\"2\",\"9\":\"5\",\"8\":\"5\"}', 0.8388, 'Nada Hasni Muhammad', 22, 'laki-laki', 'jl diponegoro', 1619250055, NULL),
-(16, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619250337, NULL),
-(17, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619251136, NULL),
-(18, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619251192, NULL),
-(19, 4, '{\"4\":\"0.9940\"}', '{\"16\":\"5\",\"15\":\"5\",\"14\":\"5\",\"13\":\"5\",\"12\":\"2\",\"11\":\"3\",\"10\":\"1\",\"9\":\"2\",\"8\":\"1\"}', 0.994, 'Juliet', 21, 'perempuan', 'Jl fantasi 69, Dunia Fantasi', 1619251448, NULL),
-(20, 5, '{\"5\":\"0.9228\",\"4\":\"0.8919\"}', '{\"16\":\"2\",\"15\":\"3\",\"14\":\"5\",\"13\":\"3\",\"12\":\"5\",\"11\":\"6\",\"10\":\"2\",\"9\":\"3\",\"8\":\"1\"}', 0.9228, 'Nada Hasni Muhammad', 21, 'laki-laki', 'asdasdas', 1619252114, NULL);
+(21, 12, '{\"12\":\"1.0000\",\"10\":\"1.0000\",\"13\":\"0.9603\",\"9\":\"0.8817\",\"11\":\"0.8403\",\"14\":\"0.4848\",\"8\":\"0.4086\"}', '{\"38\":\"2\",\"37\":\"9\",\"36\":\"9\",\"35\":\"6\",\"34\":\"9\",\"33\":\"9\",\"32\":\"3\",\"31\":\"1\",\"30\":\"2\",\"29\":\"1\",\"27\":\"2\",\"26\":\"1\",\"25\":\"2\",\"24\":\"2\",\"22\":\"4\",\"21\":\"3\",\"20\":\"1\"}', 1, 'Amry Zulfa', 2, 'perempuan', 'saasd', 1622184455, NULL);
 
 -- --------------------------------------------------------
 
@@ -161,8 +188,14 @@ CREATE TABLE `tb_penyakit` (
 --
 
 INSERT INTO `tb_penyakit` (`id_penyakit`, `nama_penyakit`, `deskripsi_penyakit`, `saran_penyakit`, `penyakit_artikel`, `penyakit_saran_artikel`, `gambar_penyakit`) VALUES
-(4, 'Kolesterol', 'deskripsi kolesterol', 'saran kolesterol', NULL, NULL, 'a9bdc5b42c6a430f1c4fda5b96a517b6.jpg'),
-(5, 'Asam Urat', 'deskripsi asam urat', 'saran asam urat', NULL, NULL, '582514e1508cc75ca9b798c00850f84a.jpg');
+(8, 'Blackhead', 'Blackhead atau komedo hitam adalah tonjolan kecil berwarna gelap yang tumbuh di pori-pori kulit.', 'a.	Campuran perasan lemon dan madu. Campurkan perasan lemon dengan takaran 1 sendok makan dan madu sebanyak 1 sendok teh. Kemudian, oleskan campuran tersebut secara merata di bagian yang terdapat komedo\r\nb.	Masker putih telur, anda bisa menggunakan putih telur. Kandungan putih telur tidak hanya mampu  menghilangkan komedo saja, tapi dapat membuat wajah lebih putih.\r\nc.	Lakukan chemical peeling. Ini adalah metode perawatan kulit dengan menggunakan bahan kimia. Perawatan ini akan mengelupas lapisan teratas kulit anda sehingga berganti dengan lapisan kulit yang lebih baru dan halus.\r\nd.	Gunakan produk yang mengandung asam salisilat. Kandungan ini memiliki kemampuan untuk membersihkan sel kulit mati dan minyak berlebih, sehingga blackhead pun jadi lebih mudah hilang.', NULL, NULL, 'e9fd069124ec38356e62788d464b6e24.jpg'),
+(9, 'Whitehead', 'Komedo putih atau disebut whitehead adalah salah satu jenis jerawat yang terbentuk ketika sel-sel kulit mati, minyak, dan bakteri terperangkap di dalam pori-pori. Folikel-folikel rambut juga ikut terperangkap, sehingga disebut juga dengan komedo tertutup.', 'a.	Kompres air hangat, air hangat memiliki fungsi untuk membuka pori-pori kulit sehingga kotoran yang menumpuk pada kulit akan keluar dengan sendirinya.\r\nb.	Gunakan sabun pembersih wajah atau salep yang mengandung benzoyl peroxide. Benzoyl peroxide berfungsi mengontrol kadar minyak berlebih di dalam pori-pori. \r\nc.	Lakukan chemical peeling. Ini adalah metode perawatan kulit dengan menggunakan bahan kimia. Perawatan ini akan mengelupas lapisan teratas kulit anda sehingga berganti dengan lapisan kulit yang lebih baru dan halus.\r\nd.	Ekstraksi komedo. Metode ini bertujuan mengangkat komedo putih dengan cara mencabutnya dengan bantuan alat khusus dari dokter kulit.', NULL, NULL, '6af5e64c84c5c158c9abbaf85635cd13.jpg'),
+(10, 'Papula', 'Jerawat papula adalah jerawat yang menonjol, teraba padat dan nyeri, tampak kemerahan, serta tidak mengandung nanah. Jerawat papula bukanlah kondisi yang serius.', 'a.	Menggunakan saleb jerawat yang mengandung benzoil peroksida.\r\nb.	Hindari kebiasaan memencet jerawat, kebiasaan ini justru dapat membuat jerawat semakin meradang.\r\nc.	Bersihkan wajah secara rutin dengan pruduk yang tepat agar wajah terbebas dari bakteri, kotoran, dan minyak.\r\nd.	Gunakan pelembap dan tabir surya untuk kelembapan kulit agar kulit tetap terhidrasi dan tidak kering.', NULL, NULL, '7763cfebfbcf838ef1d0b9d14f29e4d3.jpg'),
+(11, 'Putsula', 'Jerawat pustula adalah jenis jerawat berupa tonjolan berisi nanah dan terasa nyeri saat disentuh. Jerawat pustula dikenal pula dengan jerawat nanah.', 'a.	Menggunakan saleb jerawat yang mengandung benzoil peroksida.\r\nb.	Tidak memencet jerawat, memencet jerawat justru membuat nanah masuk lebih dalam ke pori-pori kulit di sekitarnya, sehingga membuat jerawat semakin meradang, membesar, hingga menimbulkan bekas jerawat.\r\nc.	Rutin membersihkan wajah. Anda dianjurkan untuk membersihkan wajah dua kali sehari secara rutin, dengan sabun pembersih wajah yang tidak mengandung alkohol agar terhindar dari iritasi.\r\nd.	Gunakan pelembap dan tabir surya untuk kelembapan kulit agar kulit tetap terhidrasi dan tidak kering.\r\ne.	Jalani pola hidup. Anda dianjurkan untuk menjalani pola hidup sehat dengan konsumsi makanan sehat untuk kulit, perbanyak konsumsi air putih, menghindari asap rokok, dan mengelola stres dengan baik.\r\nf.	Berolahraga, Olahraga bisa membantu melancarkan peredaran darah. Jika peredaran darah, maka penyuplaian oksigen dan nutrisi ke dalam kulit lebih lancar.', NULL, NULL, '0db5f129b7e6ed13c87161b3592915ae.jpeg'),
+(12, 'Nodul', 'Jerawat nodul adalah jenis jerawat yang muncul di bawah permukaan kulit, berukuran besar, disertai peradangan dan menimbulkan rasa nyeri.', 'a.	Menggunakan saleb jerawat yang mengandung benzoil peroksida.\r\nb.	Tidak memencet jerawat, memencet jerawat justru membuat nanah masuk lebih dalam ke pori-pori kulit di sekitarnya, sehingga membuat jerawat semakin meradang, membesar, hingga menimbulkan bekas jerawat.\r\nc.	Rutin membersihkan wajah. Anda dianjurkan untuk membersihkan wajah dua kali sehari secara rutin, dengan sabun pembersih wajah yang tidak mengandung alkohol agar terhindar dari iritasi.\r\nd.	Gunakan pelembap dan tabir surya untuk kelembapan kulit agar kulit tetap terhidrasi dan tidak kering.\r\ne.	Jalani pola hidup. Anda dianjurkan untuk menjalani pola hidup sehat dengan konsumsi makanan sehat untuk kulit, perbanyak konsumsi air putih, menghindari asap rokok, dan mengelola stres dengan baik.\r\nf.	Berolahraga, Olahraga bisa membantu melancarkan peredaran darah. Jika peredaran darah, maka penyuplaian oksigen dan nutrisi ke dalam kulit lebih lancar.', NULL, NULL, '291e738fe1a8d3f2ded15391849dcd4d.jpg'),
+(13, 'Kista', 'Jerawat kista merupakan jerawat yang terbentuk dari penumpukan minyak dan sel kulit mati pada jaringan kulit yang paling dalam. penumpukan ini akan menyebabkan peradangan yang membuat benjolan besar muncul di wajah.', 'a.	Jangan memegang atau bahkan memencet jerawat. Semakin sering kamu pegang atau pencet, semakin bertambah parah infeksi atau pembengkakan jerawat.\r\nb.	Jaga area benjolan agar tetap bersih dengan mencuci kulit sekitar menggunakan sabun antibakteri.\r\nc.	Kompres benjolan dengan kain/handuk yang dicelupkan ke air hangat selama 20-30 menit 3-4 kali sehari.\r\nd.	Hindari paparan sinar matahari dan pengguanaan kosmetik bebas minyak yang berlebihan.', NULL, NULL, 'e75e0ff1beca4356c6bcaef16b8ef8c1.jpg'),
+(14, 'Conglobata', 'Jerawat jenis ini merupakan bentuk jerawat yang parah dan melibatkan banyak nodul yang meradang. Benjolan pada jenis jerawat ini ini saling terhubung dengan benjolan lainnya di bawah permukaan kulit.', 'Produk obat-obatan yang dijual bebas tidak akan cukup mengatasi jerawat conglobata. Itu sebabnya penting untuk segera konsultasikan dengan dokter kulit.', NULL, NULL, '2a352a38660bddde810abd5c0bca8b63.jpg'),
+(15, 'Fluminans', 'Jenis jerawat ini muncul secara mendadak dan tersebar di seluruh tubuh. Jerawat meradang ini muncul disertai gejala lain seperti demam, nyeri otot, lemas, terdapat luka atau jerawat yang mudah pecah terutama di bagian tubuh atas dan wajah.', 'Jerawat ini merupakan jenis jerawat terparah untuk saat ini. Segera konsultasikan kepada dokter, agar segera di tangani oleh dokter spesialis.', NULL, NULL, '6f14762a0f67767d145144a67549dd78.jpg');
 
 -- --------------------------------------------------------
 
@@ -259,19 +292,19 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_basis_pengetahuan`
 --
 ALTER TABLE `tb_basis_pengetahuan`
-  MODIFY `id_basis_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_basis_pengetahuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_gejala`
 --
 ALTER TABLE `tb_gejala`
-  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_gejala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_hasil`
 --
 ALTER TABLE `tb_hasil`
-  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_hasil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kondisi`
@@ -283,7 +316,7 @@ ALTER TABLE `tb_kondisi`
 -- AUTO_INCREMENT untuk tabel `tb_penyakit`
 --
 ALTER TABLE `tb_penyakit`
-  MODIFY `id_penyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_penyakit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_token`

@@ -47,8 +47,9 @@
                             Sistem pakar ini dilengkapi data pengetahuan dari pakar terpercaya untuk mendeteksi beberapa penyakit.
                         </p>
                         <ul>
-                            <li><i class="ri-check-double-line"></i> Penyakit Kolesterol</li>
-                            <li><i class="ri-check-double-line"></i> Penyakit Asam Urat</li>
+
+                            <li><i class="ri-check-double-line"></i> Beberapa Jenis Penyakit Jerawat</li>
+
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">

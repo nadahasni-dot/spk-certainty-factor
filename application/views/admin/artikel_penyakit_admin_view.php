@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="penyakitSaranArtikel">Saran Penyakit</label>
-                                    <textarea id="penyakitSaranArtikel" cols="30" rows="5" class="form-control" name="penyakit_saran_artikel" placeholder="masukkan artikel tentang penyakit disini" required><?= $penyakit['penyakit_artikel']; ?></textarea>
+                                    <textarea id="penyakitSaranArtikel" cols="30" rows="5" class="form-control" name="penyakit_saran_artikel" placeholder="masukkan artikel tentang penyakit disini" required><?= $penyakit['penyakit_saran_artikel']; ?></textarea>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Simpan">
                             </form>

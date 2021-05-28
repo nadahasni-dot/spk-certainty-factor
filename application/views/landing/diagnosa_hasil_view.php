@@ -85,18 +85,30 @@
                                 if ($no == 1) :
                             ?>
                                     <h3>Hasil Diagnosa Penyakit</h3>
-                                    <div class="blog-author clearfix">
-                                        <img src="<?= base_url('assets/img/penyakit/') . $penyakit['gambar_penyakit'] ?>" class="img-fluid float-left" width="100%" alt="">
-                                        <h4><?= $penyakit['nama_penyakit']; ?></h4>
-                                        <p>
-                                            Tingkat akurasi hingga <cite title="Source Title"><?= number_format($penyakit['nilai_perhitungan'] * 100, 2) . '% (' . number_format($penyakit['nilai_perhitungan'], 4) . ')'; ?></cite>
-                                        </p>
-                                        <h4>Deskripsi Singkat Penyakit</h4>
-                                        <p><?= $penyakit['deskripsi_penyakit']; ?></p>
-                                        <h4>Saran Singkat Penyakit</h4>
-                                        <p><?= $penyakit['saran_penyakit']; ?></p>
-
-
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="<?= base_url('assets/img/penyakit/') . $penyakit['gambar_penyakit'] ?>" class="img-fluid" width="100%" alt="">
+                                                </div>
+                                                <div class="col-md-9 text-dark">
+                                                    <h4><?= $penyakit['nama_penyakit']; ?></h4>
+                                                    <p class="text-danger">
+                                                        Tingkat akurasi hingga <cite title="Source Title"><?= number_format($penyakit['nilai_perhitungan'] * 100, 2) . '% (' . number_format($penyakit['nilai_perhitungan'], 4) . ')'; ?></cite>
+                                                    </p>
+                                                    <h4>Deskripsi Penyakit</h4>
+                                                    <p class="text-dark"><?= $penyakit['deskripsi_penyakit']; ?></p>
+                                                    <?php if ($penyakit['penyakit_artikel'] != null) : ?>
+                                                        <p class="text-dark"><?= $penyakit['penyakit_artikel']; ?></p>
+                                                    <?php endif; ?>
+                                                    <h4>Saran Singkat Penyakit</h4>
+                                                    <p class="text-dark"><?= $penyakit['saran_penyakit']; ?></p>
+                                                    <?php if ($penyakit['penyakit_saran_artikel'] != null) : ?>
+                                                        <p class="text-dark"><?= $penyakit['penyakit_saran_artikel']; ?></p>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div><!-- End blog author bio -->
                             <?php
                                     $no++;
@@ -122,17 +134,7 @@
                                     endforeach;
                                 }
                                 ?>
-                            </ul>                            
-
-                            <?php if ($penyakit['penyakit_artikel'] != null) : ?>
-                            <h4>Tentang Penyakit</h4>
-                            <p><?= $penyakit['penyakit_artikel']; ?></p>
-                            <?php endif; ?>
-
-                            <?php if ($penyakit['penyakit_saran_artikel'] != null) : ?>
-                            <h4>Saran Untuk Anda</h4>
-                            <p><?= $penyakit['penyakit_saran_artikel']; ?></p>
-                            <?php endif; ?>
+                            </ul>
 
                             <a href="<?= base_url('diagnosa/diagnosa'); ?>" class="btn btn-success mt-4">Lakukan Diagnosa Lagi</a>
                         </div>

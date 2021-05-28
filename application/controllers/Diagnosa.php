@@ -44,7 +44,7 @@ class Diagnosa extends CI_Controller
         $data['sub_menu'] = null;
         $data['sub_menu_action'] = null;
 
-        $data['gejala'] = $this->Gejala_model->getGejala('all');
+        $data['gejala'] = array_reverse($this->Gejala_model->getGejala('all'));
         $data['kondisi'] = $this->Kondisi_model->getKondisi('all');
 
         $this->form_validation->set_rules('kondisi[]', 'Kondisi', 'required');
