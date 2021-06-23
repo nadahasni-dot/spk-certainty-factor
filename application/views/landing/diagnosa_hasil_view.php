@@ -88,21 +88,21 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row">
-                                                <div class="col-md-3">
-                                                    <img src="<?= base_url('assets/img/penyakit/') . $penyakit['gambar_penyakit'] ?>" class="img-fluid" width="100%" alt="">
+                                                <div class="col-md-12 text-center mb-3">
+                                                    <img style="max-width: 500px;" src="<?= base_url('assets/img/penyakit/') . $penyakit['gambar_penyakit'] ?>" class="img-fluid" width="100%" alt="">                                                    
                                                 </div>
-                                                <div class="col-md-9 text-dark">
+                                                <div class="col-md-12 text-dark">
                                                     <h4><?= $penyakit['nama_penyakit']; ?></h4>
-                                                    <p class="text-danger">
+                                                    <h5 class="text-danger">
                                                         Tingkat akurasi hingga <cite title="Source Title"><?= number_format($penyakit['nilai_perhitungan'] * 100, 2) . '% (' . number_format($penyakit['nilai_perhitungan'], 4) . ')'; ?></cite>
-                                                    </p>
+                                                    </h5>
                                                     <h4>Deskripsi Penyakit</h4>
-                                                    <p class="text-dark"><?= $penyakit['deskripsi_penyakit']; ?></p>
+                                                    <h5 class="text-dark"><?= $penyakit['deskripsi_penyakit']; ?></h5>
                                                     <?php if ($penyakit['penyakit_artikel'] != null) : ?>
                                                         <p class="text-dark"><?= $penyakit['penyakit_artikel']; ?></p>
                                                     <?php endif; ?>
                                                     <h4>Saran Singkat Penyakit</h4>
-                                                    <p class="text-dark"><?= $penyakit['saran_penyakit']; ?></p>
+                                                    <h5 class="text-dark"><?= $penyakit['saran_penyakit']; ?></h5>
                                                     <?php if ($penyakit['penyakit_saran_artikel'] != null) : ?>
                                                         <p class="text-dark"><?= $penyakit['penyakit_saran_artikel']; ?></p>
                                                     <?php endif; ?>
