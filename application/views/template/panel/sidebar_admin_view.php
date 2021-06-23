@@ -95,14 +95,14 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="<?= base_url('admin/tentang'); ?>" class="nav-link <?= $menu == 'tentang' ? 'active' : '' ?>">
               <i class="nav-icon fas fa-info"></i>
               <p>
                 Tentang
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="<?= base_url('logout'); ?>" class="nav-link">
