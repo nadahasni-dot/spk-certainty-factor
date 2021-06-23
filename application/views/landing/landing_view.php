@@ -194,7 +194,7 @@
         </section><!-- End F.A.Q Section -->
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+        <!-- <section id="contact" class="contact">
             <div class="container">
 
                 <div class="section-title">
@@ -267,6 +267,6 @@
                 </div>
 
             </div>
-        </section><!-- End Contact Section -->
+        </section>End Contact Section -->
 
     </main><!-- End #main -->
