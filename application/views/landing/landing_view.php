@@ -23,8 +23,8 @@
     <section id="hero">
         <div class="hero-container">
             <h3>Selamat datang di <strong>Sistem Pakar</strong></h3>
-            <h1>DETEKSI PINTAR</h1>
-            <h2>Sistem ini dilengkapi pengetahuan dari pakar terpercaya untuk menidentifikasi penyakit tertentu</h2>
+            <!-- <h1>DETEKSI PINTAR</h1> -->
+            <h2>Sistem ini di lengkapi pengetahuan dari pakar terpercaya untuk mengidentifikasi jenis jerawat</h2>
             <a href="#about" class="btn-get-started scrollto">Lebih Lanjut</a>
         </div>
     </section><!-- End Hero -->
@@ -44,17 +44,22 @@
                 <div class="row content">
                     <div class="col-lg-6">
                         <p>
-                            Sistem pakar ini dilengkapi data pengetahuan dari pakar terpercaya untuk mendeteksi beberapa penyakit.
+                            Sistem pakar ini dilengkapi data pengetahuan dari pakar terpercaya.
                         </p>
-                        <ul>
+                        <!-- <ul>
 
                             <li><i class="ri-check-double-line"></i> Beberapa Jenis Penyakit Jerawat</li>
 
+                        </ul> -->
+                        <ul>
+                            <li><i class="ri-check-double-line"></i> Gejala beberapa jenis jerawat</li>
+                            <li><i class="ri-check-double-line"></i> identifikasi jenis jerawat</li>
+                            <li><i class="ri-check-double-line"></i> Saran yang harus dilakukan jika terkena jerawat tersebut</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                            Pakar yang menjadi sumber pengetahuan telah berpengalaman dalam bidang penyakit dalam. Dan telah melakukan praktik resmi di POLIKLINIK Politeknik Negeri Jember selama lebih dari 5 tahun.
+                            Pakar yang menjadi sumber pengetahuan sudah lama berpengalaman di bidang kesehatan kulit. Dan sudah melakukan praktek di Personal Beauty Aesthic Clinic.
                         </p>
                     </div>
                 </div>
@@ -85,7 +90,7 @@
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-brain"></i></div>
                             <h4 class="title"><a href="">Smart Detection</a></h4>
-                            <p class="description">Deteksi penyakit dilakukan dengan menggunakan metode Certainty Factor menghasilkan diagnosa yang akurat.</p>
+                            <p class="description">Diagnosa penyakit dilakukan menggunakan metode certainty factor menghasilkan hasil beserta nilai kepastianya</p>
                         </div>
                     </div>
 
