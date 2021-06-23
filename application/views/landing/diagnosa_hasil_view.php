@@ -97,12 +97,12 @@
                                                         Tingkat akurasi hingga <cite title="Source Title"><?= number_format($penyakit['nilai_perhitungan'] * 100, 2) . '% (' . number_format($penyakit['nilai_perhitungan'], 4) . ')'; ?></cite>
                                                     </h5>
                                                     <h4>Deskripsi Penyakit</h4>
-                                                    <h5 class="text-dark"><?= $penyakit['deskripsi_penyakit']; ?></h5>
+                                                    <div class="text-custom-font-size"><?= $penyakit['deskripsi_penyakit']; ?></div>
                                                     <?php if ($penyakit['penyakit_artikel'] != null) : ?>
                                                         <p class="text-dark"><?= $penyakit['penyakit_artikel']; ?></p>
                                                     <?php endif; ?>
                                                     <h4>Saran Singkat Penyakit</h4>
-                                                    <h5 class="text-dark"><?= $penyakit['saran_penyakit']; ?></h5>
+                                                    <div class="text-custom-font-size"><?= $penyakit['saran_penyakit']; ?></div>
                                                     <?php if ($penyakit['penyakit_saran_artikel'] != null) : ?>
                                                         <p class="text-dark"><?= $penyakit['penyakit_saran_artikel']; ?></p>
                                                     <?php endif; ?>

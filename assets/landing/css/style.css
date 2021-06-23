@@ -13,6 +13,14 @@ body {
   color: #444444;
 }
 
+.text-custom-font-size p {
+  font-size: 18px !important;
+}
+
+.text-custom-font-size li {
+  font-size: 18px !important;
+}
+
 a {
   color: #e43c5c;
 }
