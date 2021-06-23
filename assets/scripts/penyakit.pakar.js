@@ -41,6 +41,8 @@ $(function () {
 			$("#edit-modal").modal("show");
 			$(".select2").select2();
 			bsCustomFileInput.init();
+			$("#deskripsiAdd").summernote();
+			$("#saranAdd").summernote();
 		});
 	});
 

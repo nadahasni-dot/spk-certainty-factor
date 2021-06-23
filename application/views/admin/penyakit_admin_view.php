@@ -111,11 +111,11 @@
                     </div> -->
                     <div class="form-group">
                         <label for="penyakitArtikel">Deskripsi Penyakit</label>
-                        <textarea id="penyakitArtikel" cols="30" rows="5" class="form-control" name="deskripsi_penyakit" placeholder="masukkan artikel tentang penyakit disini"></textarea>
+                        <textarea id="penyakitArtikel" cols="30" rows="5" class="form-control" name="deskripsi_penyakit" placeholder="masukkan deskripsi tentang penyakit disini"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="penyakitSaranArtikel">Saran Penyakit</label>
-                        <textarea id="penyakitSaranArtikel" cols="30" rows="5" class="form-control" name="saran_penyakit" placeholder="masukkan artikel tentang penyakit disini"></textarea>
+                        <textarea id="penyakitSaranArtikel" cols="30" rows="5" class="form-control" name="saran_penyakit" placeholder="masukkan saran tentang penyakit disini"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="customFile">Choose Image</label>

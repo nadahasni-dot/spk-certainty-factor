@@ -35,33 +35,33 @@
 
                             <table id="allPost" class="table table-bordered table-striped table-hover text-nowrap">
                                 <thead>
-                                    <tr>                                        
-                                        <th>Nama Penyakit</th>
-                                        <th>Deskripsi</th>
-                                        <th>Saran</th>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Penyakit</th>                                        
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $no = 1; ?>
                                     <?php foreach ($penyakit as $row) : ?>
-                                        <tr>                                            
+                                        <tr>
+                                            <td><?= $no++; ?></td>
                                             <td class="align-middle">
                                                 <p class="m-0"><a href="<?= $row['id_penyakit']; ?>" class="h6 action-edit"><?= $row['nama_penyakit']; ?></a></p>
                                                 <p class="m-0">
                                                     <a href="<?= $row['id_penyakit']; ?>" class="text-small text-danger action-edit">Edit</a> |
-                                                    <a href="<?= base_url('pakar/artikelpenyakit/') . $row['id_penyakit']; ?>" class="text-small text-danger">Artikel</a> |
+                                                    <!-- <a href="<? // base_url('pakar/artikelpenyakit/') . $row['id_penyakit']; ?>" class="text-small text-danger">Artikel</a> | -->
                                                     <a href="<?= base_url('pakar/deletepenyakit/') . $row['id_penyakit']; ?>" class="text-small text-danger action-delete">Hapus</a>
                                                 </p>
                                             </td>
-                                            <td class="align-middle"><?= $row['deskripsi_penyakit'] ?></td>
-                                            <td class="align-middle"><?= $row['saran_penyakit'] ?></td>
+                                            <!-- <td class="align-middle"><? // $row['deskripsi_penyakit'] ?></td>
+                                            <td class="align-middle"><? // $row['saran_penyakit'] ?></td> -->
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                                 <tfoot>
-                                    <tr>                                        
-                                        <th>Nama Penyakit</th>
-                                        <th>Deskripsi</th>
-                                        <th>Saran</th>
+                                    <tr>
+                                        <th>No</th>                                        
+                                        <th>Nama Penyakit</th>                                        
                                     </tr>
                                 </tfoot>
                             </table>
@@ -82,7 +82,7 @@
 
 <div class="modal fade" id="modal-tambah">
     <form action="" method="post" enctype="multipart/form-data">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Tambah Penyakit</h4>
@@ -95,13 +95,21 @@
                         <label for="namaPenyakitAdd">Nama Penyakit</label>
                         <input id="namaPenyakitAdd" type="text" class="form-control" name="nama_penyakit" placeholder="nama penyakit baru" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="deskripsiAdd">Deskripsi</label>
                         <textarea name="deskripsi_penyakit" id="deskripsiAdd" cols="30" rows="5" class="form-control" placeholder="masukkan deskripsi penyakit" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="saranAdd">Saran</label>
                         <textarea name="saran_penyakit" id="saranAdd" cols="30" rows="5" class="form-control" placeholder="masukkan saran penyakit" required></textarea>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="penyakitArtikel">Deskripsi Penyakit</label>
+                        <textarea id="penyakitArtikel" cols="30" rows="5" class="form-control" name="deskripsi_penyakit" placeholder="masukkan deskripsi tentang penyakit disini"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="penyakitSaranArtikel">Saran Penyakit</label>
+                        <textarea id="penyakitSaranArtikel" cols="30" rows="5" class="form-control" name="saran_penyakit" placeholder="masukkan artikel tentang penyakit disini"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="customFile">Choose Image</label>
@@ -125,7 +133,7 @@
 
 <div class="modal fade" id="edit-modal">
     <form action="" method="post" autocomplete="off" enctype="multipart/form-data">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Edit Penyakit</h4>
