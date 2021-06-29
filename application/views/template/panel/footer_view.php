@@ -1,11 +1,11 @@
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
+    <div class="float-right d-none d-sm-inline mb-3">
       SIPAKAR
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; <?= date('Y', time()); ?> <a href="<?= base_url(); ?>">SIPAKAR</a>.</strong> All rights reserved.
+    <!-- <strong>Copyright &copy; <?php // date('Y', time()); ?> <a href="<?php // base_url(); ?>">SIPAKAR</a>.</strong> All rights reserved. -->
   </footer>
   </div>
   <!-- ./wrapper -->
